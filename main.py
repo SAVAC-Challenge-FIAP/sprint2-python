@@ -1,23 +1,24 @@
-# Tirando o conteúdo dado,
-# Foi usado slicing [:-1] para facilitar uma verificação de entrada
-# Manipulação de strings
+# DÚVIDAS
+# POSSO USAR FUNÇÃO?
+# POSSO BOTAR EM OUTRO CÓDIGO E IMPORTAR?
+# CLASSES ????
 
 primeira_vez = True # Variável para saber se é a primeira vez do usuário no nosso aplicativo
 
 galeria = ['foto1','foto2'] # Lista com fotos da galeria para exemplo
 
-filtros = ['Vivid🌟''Neon🌈''【Love❤️】''Eclipse🌗''Retro🎞️''Vintage🕰️'] # Filtros do nosso aplicativo
-filtro_atual = 'Love❤️' # Esse será o filtro determinado pelo nosso sistema como o filtro adequado para a imagem da càmera, mas como não temos integração ainda, ele será setado nesse filtro como filtro inicial
-filtros_base = ["Vivid", "Neon", "【Love】", "Eclipse", "Retro", "Vintage"]
-emojis = ["🌟", "🌈", "❤️", "🌗", "🎞️", "🕰️"]
-filtro_atual = 'Love'
+emojis = ["🌟", "🌈", "❤️", "🌗", "🎞️", "🕰️"] # Emojis dos nossos filtros
+nomes_filtros = ["Vivid", "Neon", "Love", "Eclipse", "Retro", "Vintage"] # Filtros do nosso aplicativo
+filtro_atual = 'Love' # Esse será o filtro determinado pelo nosso sistema como o filtro da 'Vibe' da imagem no leitor da câmera em tempo real. Entretanto, como não temos integração ainda, ele terá um filtro como inicial
 
-# As variáveis abaixo servem para setar as configurações padrões da câmera sendo possível alterá-las pelo usuário 
+
+# As variáveis abaixo servem para setar as configurações padrões da câmera, sendo possível alterá-las pelo menu
 
 filtro_automatico = True 
 deteccao_em_tempo_real = True
 grade_de_composição = False
 sugestao_automatica = True
+
 
 
 
@@ -33,9 +34,9 @@ while primeira_vez == True:  # Laço de repetição para permissões para o apli
     print('1 - Permitir tudo')
     print("2 - Não permitir tudo\n")
 
-    permicao = input()
+    permissao = input()
 
-    match permicao:
+    match permissao:
         case '1':
             primeira_vez = False
 
@@ -47,10 +48,19 @@ while primeira_vez == True:  # Laço de repetição para permissões para o apli
             print('\nValor inválido!! ')
             print('Tente novamente!! \n\n')
 
-    
+
 traseira = True # Variável para saber qual câmera o usuário está
 
 while True:
+    filtros = [] # Lista dos filtros formatados com os emojis e destaque
+
+    for i in range(len(nomes_filtros)):
+        if filtro_atual == nomes_filtros[i]:
+            filtros.append('【' + nomes_filtros[i] + emojis[i] + ' 】')
+
+        else:
+            filtros.append(nomes_filtros[i] + emojis[i])
+
     if traseira == True:
         print('\n\nVocê está visualizando a câmera traseira do seu celular em tempo real!!\n')
 
@@ -60,10 +70,10 @@ while True:
     print(f'''
              _________________________________________
             | 📱                                      |
-            |  [ 8:08 ]            📡   📶   🔋 100% |
+            |  [ 8:08 ]            📡   📶   🔋 100%  |
             |_________________________________________|
             |                                         |
-            |                              [  ⚙️  ]   |
+            |                              [  ⚙️   ]   |
             |_________________________________________|
             |                                         |
             |                                         |
@@ -79,30 +89,33 @@ while True:
             |                                         |
             |                                         |
             |  Filters:                               |
-            |  {filtros[0]} {filtros[1]} {filtros[2]} |
-            |  {filtros[3]} {filtros[4]} {filtros[5]} |
+            |  {filtros[0]}       {filtros[1]}       {filtros[2]}   |
+            |  {filtros[3]}      {filtros[4]}      {filtros[5]}   |
             |                                         |
             |                                         |
-            |   | 🖼️ |          ⚪          | 🔄 |  |
+            |    🖼️             ⚪             🔄      |
             | (Galeria)     (Obturador)    (Inverter) |
             |                                         |
             |          _______________________        |
             |_________[_______________________]_______|
           ''')
     
-    print('Digite a opção desejada:')
-    print('1 - Tirar Foto:')
-    print('2 - Entrar na galeria:')      ####### Como acessar cada imagem escalonável
-    print('3 - Ajustes:')                     # Configurações da câmera
-    print('4 - Alterar filtro em tempo real:')      ######## Como alterar o filtro e printar bonito
-    print('5 - Virar câmera')                 # Vira a câmera do celular
+    print('\nDigite a opção desejada:')
+    print('1 - Tirar Foto:')               ###### Caminho principal  ❌
+    print('2 - Entrar na galeria:')      ####### Como acessar cada imagem escalonável  ❌
+    print('3 - Ajustes:')                     # Configurações da câmera ✅
+    print('4 - Alterar filtro em tempo real:')      # Altera o filtro em tempo real ✅
+    print('5 - Virar câmera')                 # Vira a câmera do celular ✅
     print('6 - Sair do aplicativo\n')
 
     menu_inicial = input()
 
     match menu_inicial:
         case '1':
-            pass
+            print('Imagem')
+            print(f'{filtros}')
+
+    
         case '2':
             while True:
                 print("Bem vindo à Galeria")
@@ -148,52 +161,57 @@ while True:
                 match menu_ajustes:
                     case '1':
                         filtro_automatico = not filtro_automatico 
+
+                        if filtro_automatico == False:
+                            filtro_atual = 0
+
+                        else:
+                            filtro_atual = 'Love'
+
                     case '2':
                         deteccao_em_tempo_real = not deteccao_em_tempo_real
+
                     case '3':
                         grade_de_composição = not grade_de_composição
+
                     case '4':
                         sugestao_automatica = not sugestao_automatica
+
                     case '5':
                         break
+
                     case _:
                         print('\nValor inválido!! ')
                         print('Tente novamente!!')
                       
         case '4':
             while True:
-                lista_filtros_diferentes = [] # Lista contendo os filtros que não estão selecionados atualmente
+                print('\nEscreve o nome do filtro desejado sem o emoji: ')
+                filtro_desejado = input('Caso queira voltar ao menu principal digite SAIR: ')
 
-                for i, filtro in enumerate(filtros):
-                    if filtro[0] != '【':
-                        print(filtros[i])
-                        lista_filtros_diferentes.append(filtros[i][:-1]) # Foi usado slicing para cortar os emojis para realizar uma verificação de entrada
+                if filtro_desejado in nomes_filtros:
+                    if filtro_desejado == filtro_atual:
+                        print('\nEsse filtro já está selecionado, digite outro! \n ')
 
-                print('\nDigite o nome do filtro desejado: ')
-                print('Digite (SAIR) se deseja voltar ao menu principal ')
-                filtro_escolhido = input()
-                if filtro_escolhido not in lista_filtros_diferentes:
-                    if filtro_escolhido != filtro_atual[:-1]:
-                        print('Esse filtro não existe! ')
-                        print('Tente novamente! \n\n')
                     else:
-                        print('Esse filtro já está selecionado! ')
-                        print('Escolha outro! \n\n')
-                elif filtro_escolhido in lista_filtros_diferentes:
-                    filtros = ['Vivid🌟''Neon🌈''Love❤️''Eclipse🌗''Retro🎞️''Vintage🕰️']
-                    for i in range(filtros):
-                        for i2 in range(filtros[i]):
+                        filtro_atual = filtro_desejado
+                        break
 
+                elif filtro_desejado == 'SAIR':
                     break
+
                 else:
-                    break
+                    print('\nEsse filtro não foi encontrado! ')
+                    print('Tente novamente\n')
 
         case '5':
             traseira = not traseira
+
         case '6':
             print('Obrigado por usar nosso aplicativo!! ')
             print("Volte sempre!! ")
             break
+
         case _:
             print('\nValor inválido!! ')
             print('Tente novamente!! \n')
