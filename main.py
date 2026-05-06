@@ -8,7 +8,7 @@
 
 primeira_vez = True # Variável para saber se é a primeira vez do usuário no nosso aplicativo
 
-galeria = ['foto1','foto2'] # Lista com fotos da galeria para exemplo
+galeria = [['🌄','Love','No Lie'],['👦','Retro','Vienna']] # Lista com fotos da galeria para exemplo
 
 emojis = ["🌟", "🌈", "❤️", "🌗", "🎞️", "🕰️"] # Emojis dos nossos filtros
 nomes_filtros = ["Vivid", "Neon", "Love", "Eclipse", "Retro", "Vintage"] # Filtros do nosso aplicativo
@@ -100,11 +100,11 @@ while True:
           ''')
     
     print('\nDigite a opção desejada:')     ###### PERMISSAO DE PRIVACIDADE ❌
-    print('1 - Tirar Foto:')               ###### Caminho principal  ❌
-    print('2 - Entrar na galeria:')      ####### Como acessar cada imagem detalhadamente  ❌
-    print('3 - Ajustes:')                     # Configurações da câmera ✅
-    print('4 - Alterar filtro em tempo real:')      # Altera o filtro em tempo real ✅
-    print('5 - Virar câmera')                 # Vira a câmera do celular ✅
+    print('1 - Tirar Foto:') # ✅ Caminho principal 
+    print('2 - Entrar na galeria:') # Como acessar cada imagem detalhadamente  ❌
+    print('3 - Ajustes:') # ✅ Configurações da câmera 
+    print('4 - Alterar filtro em tempo real:') # ✅ Altera o filtro em tempo real 
+    print('5 - Virar câmera') # ✅ Vira a câmera do celular 
     print('6 - Sair do aplicativo\n')
 
     menu_inicial = input()
@@ -178,13 +178,11 @@ while True:
                 print('2 - Ajustar tempo da música:')    # ✅ Ajusta o tempo da música selecionada para o trecho que mais agrada
                 print('3 - Play na música:') # ✅ Ainda não temos integração com API de música, então não funciona
                 print('4 - Alterar filtro:') # ✅ Altera o filtro da foto tirada
-                print('5 - Compartilhar foto') # ❌ Salva a foto e compartilha com algum aplicativo 
+                print('5 - Compartilhar foto e salvar') # ✅ Salva a foto e compartilha com algum aplicativo 
                 print('6 - Salvar foto e voltar para a câmera') # ✅ Salva a foto na galeria e retorna para câmera   
                 print('7 - Voltar para a câmera\n') # ✅ Volta para câmera sem salvar a foto
 
                 menu_foto = input('')
-
-                foto = 'Foto com seus respectivos dados'
 
                 match menu_foto:
                     case '1':
@@ -250,6 +248,7 @@ while True:
                     case '3':
                         print("\n\n🎵 🎵 🎵 🎵 🎵 🎵 ")
                         print("🎵 🎵 🎵 🎵 🎵 🎵 ")
+                        print("Música tocando")
                         print("🎵 🎵 🎵 🎵 🎵 🎵 \n")
 
                     case '4':
@@ -280,15 +279,43 @@ while True:
                             break
 
                     case '5':
-                        pass
+                        opcoes_compartilhamento = ['Instagram','TikTok','Whatsapp','Twitter','Linkedin','Mais']
+                        opcoes_resposta = [1,2,3,4,5,6,7]
 
+                        print('\n\nDigite a opção desejada de compartilhamento! \n')
+                        print('1 - Instagram')
+                        print('2 - TikTok')
+                        print('3 - Whatsapp')
+                        print('4 - Twitter')
+                        print('5 - Linkedin')
+                        print('6 - Voltar ao menu de edição')
+
+                        rede_social = input('')
+
+                        while rede_social not in opcoes_resposta:
+                            print('Opção inválida! ')
+                            rede_social = input(('Digite novamente: '))
+
+                        if rede_social == '7':
+                            break
+                        
+                        else:
+                            foto = [visu,filtro_atual,musica_escolhida]
+                            print('\nFoto salva na galeria! ')
+                            print(f'Foto compartilhada com sucesso para {opcoes_compartilhamento[rede_social-1]}\n')
+                            galeria.append(foto)
+                            break
+                  
                     case '6':
+                        foto = [visu,filtro_atual,musica_escolhida]
                         galeria.append(foto)
                         filtro_atual = 'Retro'
+                        visu = '🌄'
                         break
 
                     case '7':
                         filtro_atual = 'Retro'
+                        visu = '🌄'
                         break
 
                     case _:
@@ -297,19 +324,24 @@ while True:
     
         case '2':
             while True:
-                print("Bem vindo à Galeria")
+                print("\nBem vindo à Galeria")
                 print('Fotos do Synesthesia: ')
-                print(galeria)
-                print('Digite:')
 
                 for i in range(len(galeria)):
-                    print(f'{i+1}º - Foto')
-                print(f'{i+2} - Voltar para a câmera')
-
-                menu_galeria = input()
-
-            
+                    print(f'A {i+1}° foto é essa {galeria[i][0]} com o filtro {galeria[i][1]} e a música {galeria[i][2]}')
                 
+                print('\nDigite o número da foto que deseja visualizar! ')
+                num = int(input(''))
+
+                tamanho = len(galeria)
+
+                while 1 < num > tamanho:
+                    print('Essa foto de foto não existe! ')
+                    num = int(input('Digite novamente: '))
+
+                foto = galeria[num-1]
+                print(f'Aqui está a sua foto: {galeria[num-1][0]} com o filtro {galeria[num-1][1]} e a música {galeria[num-1][2]}')
+                break                     
 
         case '3':
             while True:
