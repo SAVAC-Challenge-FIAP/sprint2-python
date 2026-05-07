@@ -1,0 +1,68 @@
+{  
+  "fotos": [
+    {
+      "id": 1,
+      "filtro": "Vivid",
+      "musicas": [
+        {
+          "nome": "No Lie",
+          "artista": "Sean Paul feat Dua Lipa",
+          "descricao": "Alto astral, para a empolgação do momento",
+          "formatada": "No Lie - Sean Paul feat Dua Lipa"
+        },
+        {
+          "nome": "Golden Hour",
+          "artista": "JVKE",
+          "descricao": "Combina com seu histórico indie pop",
+          "formatada": "Golden Hour - JVKE"
+        },
+        {
+          "nome": "Sunset Lover",
+          "artista": "Petit Biscuit",
+          "descricao": "Eletrônica suave, perfeita pra alegria",
+          "formatada": "Sunset Lover - Petit Biscuit"
+        },
+        {
+          "nome": "Vienna",
+          "artista": "Billy Joel",
+          "descricao": "Clássica e nostálgica",
+          "formatada": "Vienna - Billy Joel"
+        }
+    ],
+      "musica_aplicada": "No Lie"
+    },
+    {
+      "id": 2,
+      "filtro": "Neon",
+      "musicas": [
+        {
+          "nome": "No Lie",
+          "artista": "Sean Paul feat Dua Lipa",
+          "descricao": "Alto astral, para a empolgação do momento",
+          "formatada": "No Lie - Sean Paul feat Dua Lipa"
+        },
+        {
+          "nome": "Golden Hour",
+          "artista": "JVKE",
+          "descricao": "Combina com seu histórico indie pop",
+          "formatada": "Golden Hour - JVKE"
+        },
+        {
+          "nome": "Sunset Lover",
+          "artista": "Petit Biscuit",
+          "descricao": "Eletrônica suave, perfeita pra alegria",
+          "formatada": "Sunset Lover - Petit Biscuit"
+        },
+        {
+          "nome": "Vienna",
+          "artista": "Billy Joel",
+          "descricao": "Clássica e nostálgica",
+          "formatada": "Vienna - Billy Joel"
+        }
+    ],
+      "musica_aplicada": "Golden Hour"
+    }
+  ]
+}
+
+

@@ -1,10 +1,11 @@
-import galeria as g # Fotos da galeria importadas como g
-import filtros as f # Dados dos filtros importados como f
+import json
 
-# Esses imports são para organização e facilitar a visualização no código
+# Do conteúdo não dado, foi utilizado: funções, json, dicionário, cor de string no print
+# Falta: permissão de uso de dados, ajustes câmera
 
-# FALTA IMPLEMENTAR
-# REGRA DE NEGÓCIO USO DE DADOS
+def print_inválido():
+    print('\Entrada inválida!! ')
+    print('Tente novamente!! \n\n')
 
 def permissoes_aplicativo():
     print("Pra começar, precisamos de algumas permissões\n")
@@ -20,25 +21,120 @@ def permissoes_aplicativo():
 
     match permissao:
         case '1':
-            return False
+            return True
 
         case '2':
             print('\n\nPara entrar no nosso modo, você precisa permitir tudo!! ')
             print('Tente novamente!\n\n')
 
         case _:
-            print('\nValor inválido!! ')
-            print('Tente novamente!! \n\n')
+            print_inválido() # Função somente para printar entrada inválida
     
-    return True
+    return False
 
-def menu_de_edicao_da_foto(visu,filtro_atual,filtro):
-    nomes_musicas = ['No Lie','Golden Hour','Sunset Lover','Vienna'] # Músicas encontradas pela nossa análise da vibe
-    artistas = ['Sean Paul feat Dua Lipa','JVKE','Petit Biscuit','Billy Joel'] # Artistas das músicas
-    descricoes_musicas = ['Alto astral, para a empolgação do momento','Combina com seu histórico indie pop','Eletrônica suave, perfeita pra alegria','Clássica e nostálgica'] # Descrição de cada música
+def print_camera(visu,filtros_formatados):
+    print(f'''
+        _________________________________________
+        | 📱                                      |
+        |  [ 8:08 ]            📡   📶   🔋 100%  |
+        |_________________________________________|
+        |                                         |
+        |                              [  ⚙️   ]   |
+        |_________________________________________|
+        |                                         |
+        |                                         |
+        |                                         |
+        |                                         |
+        |                   {visu}                    |
+        |                                         |
+        |                                         |
+        |                                         |
+        |                                         |
+        |                                         |
+        |_________________________________________|
+        |                                         |
+        |                                         |
+        |  Filtros:                               |
+        |  {filtros_formatados[0]:<15}       {filtros_formatados[1]:<15}       {filtros_formatados[2]:<15}   |
+        |  {filtros_formatados[3]:<15}      {filtros_formatados[4]:<15}      {filtros_formatados[5]:<15}   |
+        |                                         |
+        |                                         |
+        |    🖼️             ⚪             🔄      |
+        |                                         |
+        |                                         |
+        |          _______________________        |
+        |_________[_______________________]_______|
+    ''')
 
-    musica_escolhida = 'No Lie' # Música paescolhida pela IA
-    descricao_musica = ' '
+def print_foto(visu,filtro,musica,descricao_musica,num1,num2):
+    print(f'''
+        _________________________________________
+        | 📱                                      |
+        |  [ 8:08 ]            📡   📶   🔋 100%  |
+        |_________________________________________|
+        |                                         |
+        |                                         |
+        |_________________________________________|
+        |                                         |
+        |                                         |
+        |                                         |
+        |                                         |
+        |                {visu}                      |
+        |                                         |
+        |                                         |
+        |                                         |
+        |                                         |
+        |                                         |
+        |_________________________________________|
+        |                                         |
+        |  Filtro:     {filtro}                                  |
+        |  Música:     {musica}                          |
+        |              {descricao_musica}                 |
+        |                                         |
+        |  Trecho: 0:{num1} 0:{num2}                    |
+        |                                         |
+        |    ⬇️             ▶️             🔗       |
+        |                                         |
+        |                                         |
+        |          _______________________        |
+        |_________[_______________________]_______|
+    ''')
+
+def escolha_filtros(nomes_filtros,filtro_atual):
+    while True:
+        print('\nEscreva o nome do filtro desejado sem o emoji: ')
+        filtro_desejado = input('Caso queira voltar ao menu principal digite SAIR: ')
+
+        if filtro_desejado in nomes_filtros:
+            if filtro_desejado == filtro_atual:
+                print('\nEsse filtro já está selecionado, digite outro! \n ')
+
+            else:
+                filtro_atual = filtro_desejado
+                return filtro_atual       
+
+        elif filtro_desejado == 'SAIR':
+            return filtro_atual
+
+        else:
+            print('\nEsse filtro não foi encontrado! ')
+            print('Tente novamente\n')
+
+def menu_de_edicao_da_foto(visu,filtro_atual,filtro_selecionado,nomes_filtros,filtros_formatados, filtros):
+    # Aqui estão as músicas que nosso sistema determinou próprio para a foto tirada
+
+    musicas_da_foto_tirada =  [
+        {"nome": 'No Lie', "artista": 'Sean Paul feat Dua Lipa',"descricao":'Alto astral, para a empolgação do momento',"formatada":'No Lie - Sean Paul feat Dua Lipa'},
+        {"nome": 'Golden Hour', "artista": 'JVKE',"descricao":'Combina com seu histórico indie pop',"formatada":'Golden Hour - JVKE'},
+        {"nome": 'Sunset Lover', "artista": 'Petit Biscuit',"descricao":'Eletrônica suave, perfeita pra alegria',"formatada": 'Sunset Lover - Petit Biscuit'},
+        {"nome": 'Vienna', "artista": 'Billy Joel',"descricao": 'Clássica e nostálgica',"formatada": 'Vienna - Billy Joel'}
+    ]
+
+    musica_escolhida = 'No Lie' # Música aescolhida pela IA
+    descricao_musica = 'Alto astral, para a empolgação do momento' # Descrição da músicca escolhida pela IA
+    musica = 'No Lie - Sean Paul feat Dua Lipa' # Música escolhida formatada
+
+    musicas = [] # Lista das músicas formatadas com os artistas e descrição
 
     tempo_musica = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30] # Com nossa API grátis, por enquanto só conseguimos 30 segundos de cada música, e aqui seria esse tempo da música encontrada pelo nosso sistema
     # Como ainda não contém música nesse tempo, ele é figurativo e só serve para ter alguma forma de manipulação
@@ -47,61 +143,25 @@ def menu_de_edicao_da_foto(visu,filtro_atual,filtro):
     num1 = 1 # Variável para mostrar quando a música começa
     num2 = 30 # Variável para mostrar quando a música termina
 
-    while True:
-        musicas = [] # Lista das músicas formatadas com os artistas e descrição
-        musica = '' # Música escolhida formatada
-    
-        for i in range(len(nomes_musicas)):
-            if nomes_musicas[i] == musica_escolhida:
-                musica = f'{nomes_musicas[i]} {artistas[i]}'
-                descricao_musica = descricoes_musicas[i]
-            
-            else:
-                musicas.append(f'{nomes_musicas[i]}\n{artistas[i]}\n{descricoes_musicas[i]}')
+    while True:    
+        for m in musicas_da_foto_tirada: # Esse for serve para atulizar a música formatada e a sua descrição
+            musicas.append(m['formatada'])
+            if m['nome'] == musica_escolhida:
+                musica = m['formatada']
+                descricao_musica = m['descricao']
 
-            
+
+        print_foto(visu,filtro_selecionado,musica,descricao_musica,num1,num2)
+
         # Aqui vai ser printado a foto com as seguintes opções
-        print(f'''
-                _________________________________________
-                | 📱                                      |
-                |  [ 8:08 ]            📡   📶   🔋 100%  |
-                |_________________________________________|
-                |                                         |
-                |                                         |
-                |_________________________________________|
-                |                                         |
-                |                                         |
-                |                                         |
-                |                                         |
-                |                {visu}                      |
-                |                                         |
-                |                                         |
-                |                                         |
-                |                                         |
-                |                                         |
-                |_________________________________________|
-                |                                         |
-                |  Filtro:     {filtro}                                  |
-                |  Música:     {musica}                          |
-                |              {descricao_musica}                 |
-                |                                         |
-                |  Trecho: 0:{num1} 0:{num2}                    |
-                |                                         |
-                |    ⬇️             ▶️             🔗       |
-                |                                         |
-                |                                         |
-                |          _______________________        |
-                |_________[_______________________]_______|
-            ''')
-
     
         print('\nDigite a opção desejada:')                  
-        print('1 - Trocar música:') # ✅ Troca a música escolhida pela nossa IA por outra que a nossa IA retornou               
-        print('2 - Ajustar tempo da música:')    # ✅ Ajusta o tempo da música selecionada para o trecho que mais agrada
-        print('3 - Play na música:') # ✅ Ainda não temos integração com API de música, então não funciona
+        print('1 - Trocar música:') # ❌ Troca a música escolhida pela nossa IA por outra que a nossa IA retornou               
+        print('2 - Ajustar tempo da música:')    # ❌ Ajusta o tempo da música selecionada para o trecho que mais agrada
+        print('3 - Play na música:') # ❌ Ainda não temos integração com API de música, então não funciona
         print('4 - Alterar filtro:') # ✅ Altera o filtro da foto tirada
-        print('5 - Compartilhar foto e salvar') # ✅ Salva a foto e compartilha com algum aplicativo 
-        print('6 - Salvar foto e voltar para a câmera') # ✅ Salva a foto na galeria e retorna para câmera   
+        print('5 - Compartilhar foto e salvar') # ❌ Salva a foto e compartilha com algum aplicativo 
+        print('6 - Salvar foto e voltar para a câmera') # ❌ Salva a foto na galeria e retorna para câmera   
         print('7 - Voltar para a câmera\n') # ✅ Volta para câmera sem salvar a foto
 
         menu_foto = input('')
@@ -116,7 +176,7 @@ def menu_de_edicao_da_foto(visu,filtro_atual,filtro):
                         print(musicas[i])
 
                     print('\nEscreva o nome da música desejada: ')
-                    musica_desejada = input('Caso queira voltar ao menu principal digite SAIR: ')
+                    musica_desejada = input('Caso queira voltar ao menu principal digite SAIR: ').upper()
 
                     if musica_desejada in nomes_musicas:
                         if musica_desejada == musica_escolhida:
@@ -174,32 +234,28 @@ def menu_de_edicao_da_foto(visu,filtro_atual,filtro):
                 print("🎵 🎵 🎵 🎵 🎵 🎵 \n")
 
             case '4':
-                while True:
-                    print('\nAs opções de filtros disponíveis são: ')
-                    for i in range(len(filtros)):
-                        print(filtros[i])
-                    print('\nEscreve o nome do filtro desejado sem o emoji: ')
-                    filtro_desejado = input('Caso queira voltar ao menu principal digite SAIR: ')
-
-                    if filtro_desejado in f.nomes_filtros:
-                        for i in range(len(f.nomes_filtros)):
-                            if filtro_desejado == f.nomes_filtros[i]:
-                                print('\nEsse filtro já está selecionado, digite outro! \n ')
-
-                            else:
-                                filtro_atual = filtro_desejado
-                                filtro = f'{filtro_desejado} {f.emojis[i]}'
-                                break          
+                print('\nAs opções de filtros disponíveis são: ')
                 
-                    elif filtro_desejado == 'SAIR':
-                        break
+                i = 0
 
-                    else:
-                        print('\nEsse filtro não foi encontrado! ')
-                        print('Tente novamente\n')
-                    
-                    break
+                for f in filtros: # Esse for serve para printar os filtros não selecionados
+                    texto = f['formatado']
+                    if texto == filtros_formatados[i]:
+                        print(texto)
 
+                    i += 1
+
+                filtro_atual = escolha_filtros(nomes_filtros,filtro_atual)
+
+                filtros_formatados = []
+
+                for f in filtros:
+                    texto = f['formatado']                     
+                    filtros_formatados.append(f"\033[31m【 {texto} 】\033[0m" if f['nome'] == filtro_atual else texto)
+
+                    if filtro_atual == f['nome']:
+                        filtro_selecionado = texto
+            
             case '5':
                 opcoes_compartilhamento = ['Instagram','TikTok','Whatsapp','Twitter','Linkedin','Mais']
                 opcoes_resposta = [1,2,3,4,5,6,7]
@@ -241,13 +297,12 @@ def menu_de_edicao_da_foto(visu,filtro_atual,filtro):
                 break
 
             case _:
-                print('\nValor inválido!! ')
-                print('Tente novamente!! \n')
+                print_inválido()
     
-    return filtro_atual, visu
+    return visu, filtro_atual
 
 def main():
-    # As variáveis abaixo servem para setar as configurações padrões da câmera, sendo possível alterá-las pelo menu
+    # As variáveis abaixo servem para setar as configurações padrões da câmera, sendo possível alterá-las pelo usuário
 
     filtro_automatico = True 
     deteccao_em_tempo_real = True
@@ -259,84 +314,50 @@ def main():
 
     filtro_atual = 'Retro' # Esse variável contem o filtro determinado pelo nosso sistema como o filtro da 'Vibe' da imagem no leitor da câmera em tempo real. Entretanto, como não temos integração ainda, ele terá um filtro setado como inicial
 
+    filtro_selecionado = 'Retro 🎞️' # Aqui vai ser armazenado o filtro selecionado formatado para ser usado no menu de edição
+
     while True:
-        filtros = [] # Lista dos filtros formatados com os emojis e destaque
-        filtro = '' # Aqui está armazenado o filtro selecionado formatado para ser usado nas próximas abas
-
-        for i in range(len(f.nomes_filtros)):
-            if filtro_atual == f.nomes_filtros[i]:
-                filtros.append(f'\033[31m【 {f.nomes_filtros[i]} {f.emojis[i]}  】\033[0m')
-                filtro = f'{f.nomes_filtros[i]} {f.emojis[i]}'
-
-            else:
-                filtros.append(f.nomes_filtros[i] + f.emojis[i])
-
-        print(f'''
-                _________________________________________
-                | 📱                                      |
-                |  [ 8:08 ]            📡   📶   🔋 100%  |
-                |_________________________________________|
-                |                                         |
-                |                              [  ⚙️   ]   |
-                |_________________________________________|
-                |                                         |
-                |                                         |
-                |                                         |
-                |                                         |
-                |                   {visu}                    |
-                |                                         |
-                |                                         |
-                |                                         |
-                |                                         |
-                |                                         |
-                |_________________________________________|
-                |                                         |
-                |                                         |
-                |  Filtros:                               |
-                |  {filtros[0]}       {filtros[1]}       {filtros[2]}   |
-                |  {filtros[3]}      {filtros[4]}      {filtros[5]}   |
-                |                                         |
-                |                                         |
-                |    🖼️             ⚪             🔄      |
-                |                                         |
-                |                                         |
-                |          _______________________        |
-                |_________[_______________________]_______|
-            ''')
+        # Recebe o filtros.json do nosso sistema
+        with open('filtros.json', 'r', encoding='utf-8') as f:
+            dados = json.load(f) 
         
-        print('\nDigite a opção desejada:')     ###### PERMISSAO DE PRIVACIDADE ❌
-        print('1 - Tirar Foto:') # ✅ Caminho principal 
-        print('2 - Entrar na galeria:') # Como acessar cada imagem detalhadamente  ❌
+        filtros = dados['filtros'] # Recebe a lista de dados dos filtros
+
+        
+        filtros_formatados = [] # Lista dos filtros formatados com os emojis e destaque
+        nomes_filtros = [] # Aqui ficará os nomes dos filtros para verificações de entrada
+
+        for f in filtros:
+            texto = f['formatado'] # Recebe o nome do filtro formatado com o emoji
+            nomes_filtros.append(f['nome'])
+
+            # Adiciona com destaque se for o atual, senão adiciona o texto puro
+            filtros_formatados.append(f"\033[31m【 {texto} 】\033[0m" if f['nome'] == filtro_atual else texto)
+            
+            # Atualiza a variável 'filtro' caso seja o selecionado
+            if f['nome'] == filtro_atual: 
+                filtro_selecionado = texto
+
+        print_camera(visu, filtros_formatados) # Função para printar câmera
+
+        print('\nDigite a opção desejada:')     
+        print('1 - Tirar Foto:') # ✅ Tira a foto que o usuário estiver vendo no momento
+        print('2 - Entrar na galeria:') # ❌ Como acessar cada imagem detalhadamente 
         print('3 - Ajustes:') # ✅ Configurações da câmera 
         print('4 - Alterar filtro em tempo real:') # ✅ Altera o filtro em tempo real 
         print('5 - Virar câmera') # ✅ Vira a câmera do celular 
-        print('6 - Sair do aplicativo\n')
+        print('6 - Sair do aplicativo\n') # ✅ Fecha o aplicativo
 
         menu_inicial = input()
 
         match menu_inicial:
             case '1':
-                filtro_atual, visu = menu_de_edicao_da_foto(visu,filtro_atual,filtro) # Menu de edição de foto
+                visu, filtro_atual = menu_de_edicao_da_foto(visu,filtro_atual,filtro_selecionado,nomes_filtros,filtros_formatados, filtros) # Menu de edição de foto
         
             case '2':
                 while True:
                     print("\nBem vindo à Galeria")
                     print('Fotos do Synesthesia: ')
-
-                    for i in range(len(g.fotos)):
-                        print(f'A {i+1}° foto é essa {g.fotos[i][0]} com o filtro {g.fotos[i][1]} e a música {g.fotos[i][2]}')
-                    
-                    print('\nDigite o número da foto que deseja visualizar! ')
-                    num = int(input(''))
-
-                    tamanho = len(g.fotos)
-
-                    while 1 < num > tamanho:
-                        print('Essa foto de foto não existe! ')
-                        num = int(input('Digite novamente: '))
-
-                    foto = g.fotos[num-1]
-                    print(f'Aqui está a sua foto: {g.fotos[num-1][0]} com o filtro {g.fotos[num-1][1]} e a música {g.fotos[num-1][2]}')
                     break                     
 
             case '3':
@@ -391,37 +412,20 @@ def main():
                             break
 
                         case _:
-                            print('\nValor inválido!! ')
-                            print('Tente novamente!!')
+                            print_inválido
                         
             case '4':
-                while True:
-                    print('\nEscreve o nome do filtro desejado sem o emoji: ')
-                    filtro_desejado = input('Caso queira voltar ao menu principal digite SAIR: ')
-
-                    if filtro_desejado in f.nomes_filtros:
-                        if filtro_desejado == filtro_atual:
-                            print('\nEsse filtro já está selecionado, digite outro! \n ')
-
-                        else:
-                            filtro_atual = filtro_desejado
-                            break
-
-                    elif filtro_desejado == 'SAIR':
-                        break
-
-                    else:
-                        print('\nEsse filtro não foi encontrado! ')
-                        print('Tente novamente\n')
-
+                filtro_atual = escolha_filtros(nomes_filtros,filtro_atual)
+                
             case '5':
                 traseira = not traseira
 
-                print('\n\nAo virar a câmera, o sistema vai recalcular o filtro adequado! ') 
+                print('\n\nAo virar a câmera, o sistema recalcula o filtro adequado! ') 
 
                 if traseira == True:
                     filtro_atual = 'Retro'
                     visu = '🌄'
+
                 else:
                     filtro_atual = 'Neon'
                     visu = '👦'
@@ -432,21 +436,18 @@ def main():
                 break
 
             case _:
-                print('\nValor inválido!! ')
-                print('Tente novamente!! \n')
+                print_inválido()
 
 if __name__ == "__main__":  
     print('\nBem vindo ao modo Synesthesia !!!\n')
 
     while True: 
-        permissoes = permissoes_aplicativo() # Essa função serve para o usuário permitir a utilização da câmera e da galeria
-        # Além disso ela serve como uma regra de negócio para o usuário permitir o uso de dados
+        # A função abaixo serve para o usuário permitir a utilização da câmera e da galeria
+        # Além disso ela contém permissão do uso de dados
 
-        if permissoes == False:
+        permissoes = permissoes_aplicativo()
+    
+        if permissoes == True:
             break    
 
     main()
-
-
-
-
