@@ -5,6 +5,7 @@
     {"nome": "LOVE","formatado":"Love ❤️"},
     {"nome": "ECLIPSE","formatado":"Eclipse 🌗"},
     {"nome": "RETRO","formatado":"Retro 🎞️"},
-    {"nome": "VINTAGE","formatado":"Vintage 🕰️"}
+    {"nome": "VINTAGE","formatado":"Vintage 🕰️"},
+    {"nome": "SEM FILTRO","formatado":"Sem filtro"}
   ]
 }

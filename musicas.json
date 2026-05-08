@@ -1,0 +1,19 @@
+{
+    "musicas": [
+        {"nome": "NO LIE", "descricao": "Alto astral, para a empolgação do momento", "formatada": "No Lie - Sean Paul feat Dua Lipa"},
+        {"nome": "GOLDEN HOUR", "descricao": "Combina com seu histórico indie pop", "formatada": "Golden Hour - JVKE"},
+        {"nome": "SUNSET LOVER", "descricao": "Eletrônica suave, perfeita pra alegria", "formatada": "Sunset Lover - Petit Biscuit"},
+        {"nome": "VIENNA", "descricao": "Clássica e nostálgica", "formatada": "Vienna - Billy Joel"},
+        {"nome": "BLINDING LIGHTS", "descricao": "Vibe oitocentista e energética", "formatada": "Blinding Lights - The Weeknd"},
+        {"nome": "LEVITATING", "descricao": "Pop dançante e chiclete", "formatada": "Levitating - Dua Lipa"},
+        {"nome": "AS IT WAS", "descricao": "Leve e perfeita para transições", "formatada": "As It Was - Harry Styles"},
+        {"nome": "STARBOY", "descricao": "Batida marcante e noturna", "formatada": "Starboy - The Weeknd"},
+        {"nome": "CIRCLES", "descricao": "Melodia relaxante e nostálgica", "formatada": "Circles - Post Malone"},
+        {"nome": "HEAT WAVES", "descricao": "Indie pop com cara de verão", "formatada": "Heat Waves - Glass Animals"},
+        {"nome": "COLD HEART", "descricao": "Remix clássico para momentos alegres", "formatada": "Cold Heart - Elton John & Dua Lipa"},
+        {"nome": "STAY", "descricao": "Ritmo acelerado e moderno", "formatada": "Stay - The Kid LAROI & Justin Bieber"},
+        {"nome": "SAVE YOUR TEARS", "descricao": "Sintetizadores envolventes", "formatada": "Save Your Tears - The Weeknd"},
+        {"nome": "WATERMELON SUGAR", "descricao": "Vibe ensolarada e refrescante", "formatada": "Watermelon Sugar - Harry Styles"},
+        {"nome": "MIDNIGHT CITY", "descricao": "Eletrônica épica e urbana", "formatada": "Midnight City - M83"}
+    ]
+}

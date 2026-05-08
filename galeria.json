@@ -5,161 +5,84 @@
             "filtro": "VIVID",
             "filtro_formatado": "Vivid 🌟",
             "musicas": [
-                {
-                    "nome": "NO LIE",
-                    "artista": "Sean Paul feat Dua Lipa",
-                    "descricao": "Alto astral, para a empolgação do momento",
-                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
-                },
-                {
-                    "nome": "GOLDEN HOUR",
-                    "artista": "JVKE",
-                    "descricao": "Combina com seu histórico indie pop",
-                    "formatada": "Golden Hour - JVKE"
-                },
-                {
-                    "nome": "SUNSET LOVER",
-                    "artista": "Petit Biscuit",
-                    "descricao": "Eletrônica suave, perfeita pra alegria",
-                    "formatada": "Sunset Lover - Petit Biscuit"
-                },
-                {
-                    "nome": "VIENNA",
-                    "artista": "Billy Joel",
-                    "descricao": "Clássica e nostálgica",
-                    "formatada": "Vienna - Billy Joel"
-                }
+                {"nome": "BLINDING LIGHTS", "descricao": "Vibe oitocentista e energética", "formatada": "Blinding Lights - The Weeknd"},
+                {"nome": "LEVITATING", "descricao": "Pop dançante e chiclete", "formatada": "Levitating - Dua Lipa"},
+                {"nome": "STAY", "descricao": "Ritmo acelerado e moderno", "formatada": "Stay - The Kid LAROI & Justin Bieber"},
+                {"nome": "NO LIE", "descricao": "Alto astral, para a empolgação do momento", "formatada": "No Lie - Sean Paul feat Dua Lipa"}
             ],
-            "musica_aplicada": "NO LIE"
-
+            "musica_aplicada": "Blinding Lights - The Weeknd"
         },
         {
             "id": 2,
             "filtro": "NEON",
             "filtro_formatado": "Neon 🌈",
             "musicas": [
-                {
-                    "nome": "NO LIE",
-                    "artista": "Sean Paul feat Dua Lipa",
-                    "descricao": "Alto astral, para a empolgação do momento",
-                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
-                },
-                {
-                    "nome": "GOLDEN HOUR",
-                    "artista": "JVKE",
-                    "descricao": "Combina com seu histórico indie pop",
-                    "formatada": "Golden Hour - JVKE"
-                },
-                {
-                    "nome": "SUNSET LOVER",
-                    "artista": "Petit Biscuit",
-                    "descricao": "Eletrônica suave, perfeita pra alegria",
-                    "formatada": "Sunset Lover - Petit Biscuit"
-                },
-                {
-                    "nome": "VIENNA",
-                    "artista": "Billy Joel",
-                    "descricao": "Clássica e nostálgica",
-                    "formatada": "Vienna - Billy Joel"
-                }
+                {"nome": "MIDNIGHT CITY", "descricao": "Eletrônica épica e urbana", "formatada": "Midnight City - M83"},
+                {"nome": "STARBOY", "descricao": "Batida marcante e noturna", "formatada": "Starboy - The Weeknd"},
+                {"nome": "SUNSET LOVER", "descricao": "Eletrônica suave, perfeita pra alegria", "formatada": "Sunset Lover - Petit Biscuit"},
+                {"nome": "SAVE YOUR TEARS", "descricao": "Sintetizadores envolventes", "formatada": "Save Your Tears - The Weeknd"}
             ],
-            "musica_aplicada": "GOLDEN HOUR"
+            "musica_aplicada": "Midnight City - M83"
         },
         {
             "id": 3,
             "filtro": "ECLIPSE",
             "filtro_formatado": "Eclipse 🌗",
             "musicas": [
-                {
-                    "nome": "No Lie",
-                    "artista": "Sean Paul feat Dua Lipa",
-                    "descricao": "Alto astral, para a empolgação do momento",
-                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
-                },
-                {
-                    "nome": "Golden Hour",
-                    "artista": "JVKE",
-                    "descricao": "Combina com seu histórico indie pop",
-                    "formatada": "Golden Hour - JVKE"
-                },
-                {
-                    "nome": "Sunset Lover",
-                    "artista": "Petit Biscuit",
-                    "descricao": "Eletrônica suave, perfeita pra alegria",
-                    "formatada": "Sunset Lover - Petit Biscuit"
-                },
-                {
-                    "nome": "Vienna",
-                    "artista": "Billy Joel",
-                    "descricao": "Clássica e nostálgica",
-                    "formatada": "Vienna - Billy Joel"
-                }
+                {"nome": "CIRCLES", "descricao": "Melodia relaxante e nostálgica", "formatada": "Circles - Post Malone"},
+                {"nome": "AS IT WAS", "descricao": "Leve e perfeita para transições", "formatada": "As It Was - Harry Styles"},
+                {"nome": "HEAT WAVES", "descricao": "Indie pop com cara de verão", "formatada": "Heat Waves - Glass Animals"},
+                {"nome": "GOLDEN HOUR", "descricao": "Combina com seu histórico indie pop", "formatada": "Golden Hour - JVKE"}
             ],
-            "musica_aplicada": "No Lie - Sean Paul feat Dua Lipa"
+            "musica_aplicada": "Circles - Post Malone"
         },
         {
             "id": 4,
-            "filtro": "",
+            "filtro": " ",
             "filtro_formatado": "Sem filtro",
             "musicas": [
-                {
-                    "nome": "No Lie",
-                    "artista": "Sean Paul feat Dua Lipa",
-                    "descricao": "Alto astral, para a empolgação do momento",
-                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
-                },
-                {
-                    "nome": "Golden Hour",
-                    "artista": "JVKE",
-                    "descricao": "Combina com seu histórico indie pop",
-                    "formatada": "Golden Hour - JVKE"
-                },
-                {
-                    "nome": "Sunset Lover",
-                    "artista": "Petit Biscuit",
-                    "descricao": "Eletrônica suave, perfeita pra alegria",
-                    "formatada": "Sunset Lover - Petit Biscuit"
-                },
-                {
-                    "nome": "Vienna",
-                    "artista": "Billy Joel",
-                    "descricao": "Clássica e nostálgica",
-                    "formatada": "Vienna - Billy Joel"
-                }
+                {"nome": "WATERMELON SUGAR", "descricao": "Vibe ensolarada e refrescante", "formatada": "Watermelon Sugar - Harry Styles"},
+                {"nome": "COLD HEART", "descricao": "Remix clássico para momentos alegres", "formatada": "Cold Heart - Elton John & Dua Lipa"},
+                {"nome": "SUNSET LOVER", "descricao": "Eletrônica suave, perfeita pra alegria", "formatada": "Sunset Lover - Petit Biscuit"},
+                {"nome": "VIENNA", "descricao": "Clássica e nostálgica", "formatada": "Vienna - Billy Joel"}
             ],
-            "musica_aplicada": "No Lie - Sean Paul feat Dua Lipa"
+            "musica_aplicada": "Watermelon Sugar - Harry Styles"
         },
         {
             "id": 5,
             "filtro": "RETRO",
             "filtro_formatado": "Retro 🎞️",
             "musicas": [
-                {
-                    "nome": "No Lie",
-                    "artista": "Sean Paul feat Dua Lipa",
-                    "descricao": "Alto astral, para a empolgação do momento",
-                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
-                },
-                {
-                    "nome": "Golden Hour",
-                    "artista": "JVKE",
-                    "descricao": "Combina com seu histórico indie pop",
-                    "formatada": "Golden Hour - JVKE"
-                },
-                {
-                    "nome": "Sunset Lover",
-                    "artista": "Petit Biscuit",
-                    "descricao": "Eletrônica suave, perfeita pra alegria",
-                    "formatada": "Sunset Lover - Petit Biscuit"
-                },
-                {
-                    "nome": "Vienna",
-                    "artista": "Billy Joel",
-                    "descricao": "Clássica e nostálgica",
-                    "formatada": "Vienna - Billy Joel"
-                }
+                {"nome": "VIENNA", "descricao": "Clássica e nostálgica", "formatada": "Vienna - Billy Joel"},
+                {"nome": "CIRCLES", "descricao": "Melodia relaxante e nostálgica", "formatada": "Circles - Post Malone"},
+                {"nome": "GOLDEN HOUR", "descricao": "Combina com seu histórico indie pop", "formatada": "Golden Hour - JVKE"},
+                {"nome": "SAVE YOUR TEARS", "descricao": "Sintetizadores envolventes", "formatada": "Save Your Tears - The Weeknd"}
             ],
-            "musica_aplicada": "No Lie - Sean Paul feat Dua Lipa"
+            "musica_aplicada": "Vienna - Billy Joel"
+        },
+        {
+            "id": 6,
+            "filtro": "VINTAGE",
+            "filtro_formatado": "Vintage 🕰️",
+            "musicas": [
+                {"nome": "COLD HEART", "descricao": "Remix clássico para momentos alegres", "formatada": "Cold Heart - Elton John & Dua Lipa"},
+                {"nome": "AS IT WAS", "descricao": "Leve e perfeita para transições", "formatada": "As It Was - Harry Styles"},
+                {"nome": "VIENNA", "descricao": "Clássica e nostálgica", "formatada": "Vienna - Billy Joel"},
+                {"nome": "MIDNIGHT CITY", "descricao": "Eletrônica épica e urbana", "formatada": "Midnight City - M83"}
+            ],
+            "musica_aplicada": "Cold Heart - Elton John & Dua Lipa"
+        },
+        {
+            "id": 7,
+            "filtro": "VIVID",
+            "filtro_formatado": "Vivid 🌟",
+            "musicas": [
+                {"nome": "STAY", "descricao": "Ritmo acelerado e moderno", "formatada": "Stay - The Kid LAROI & Justin Bieber"},
+                {"nome": "LEVITATING", "descricao": "Pop dançante e chiclete", "formatada": "Levitating - Dua Lipa"},
+                {"nome": "NO LIE", "descricao": "Alto astral, para a empolgação do momento", "formatada": "No Lie - Sean Paul feat Dua Lipa"},
+                {"nome": "BLINDING LIGHTS", "descricao": "Vibe oitocentista e energética", "formatada": "Blinding Lights - The Weeknd"}
+            ],
+            "musica_aplicada": "Stay - The Kid LAROI & Justin Bieber"
         }
     ]
 }
