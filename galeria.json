@@ -1,68 +1,165 @@
-{  
-  "fotos": [
-    {
-      "id": 1,
-      "filtro": "Vivid",
-      "musicas": [
+{
+    "fotos": [
         {
-          "nome": "No Lie",
-          "artista": "Sean Paul feat Dua Lipa",
-          "descricao": "Alto astral, para a empolgação do momento",
-          "formatada": "No Lie - Sean Paul feat Dua Lipa"
+            "id": 1,
+            "filtro": "VIVID",
+            "filtro_formatado": "Vivid 🌟",
+            "musicas": [
+                {
+                    "nome": "NO LIE",
+                    "artista": "Sean Paul feat Dua Lipa",
+                    "descricao": "Alto astral, para a empolgação do momento",
+                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
+                },
+                {
+                    "nome": "GOLDEN HOUR",
+                    "artista": "JVKE",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                },
+                {
+                    "nome": "SUNSET LOVER",
+                    "artista": "Petit Biscuit",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "VIENNA",
+                    "artista": "Billy Joel",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                }
+            ],
+            "musica_aplicada": "NO LIE"
+
         },
         {
-          "nome": "Golden Hour",
-          "artista": "JVKE",
-          "descricao": "Combina com seu histórico indie pop",
-          "formatada": "Golden Hour - JVKE"
+            "id": 2,
+            "filtro": "NEON",
+            "filtro_formatado": "Neon 🌈",
+            "musicas": [
+                {
+                    "nome": "NO LIE",
+                    "artista": "Sean Paul feat Dua Lipa",
+                    "descricao": "Alto astral, para a empolgação do momento",
+                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
+                },
+                {
+                    "nome": "GOLDEN HOUR",
+                    "artista": "JVKE",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                },
+                {
+                    "nome": "SUNSET LOVER",
+                    "artista": "Petit Biscuit",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "VIENNA",
+                    "artista": "Billy Joel",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                }
+            ],
+            "musica_aplicada": "GOLDEN HOUR"
         },
         {
-          "nome": "Sunset Lover",
-          "artista": "Petit Biscuit",
-          "descricao": "Eletrônica suave, perfeita pra alegria",
-          "formatada": "Sunset Lover - Petit Biscuit"
+            "id": 3,
+            "filtro": "ECLIPSE",
+            "filtro_formatado": "Eclipse 🌗",
+            "musicas": [
+                {
+                    "nome": "No Lie",
+                    "artista": "Sean Paul feat Dua Lipa",
+                    "descricao": "Alto astral, para a empolgação do momento",
+                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
+                },
+                {
+                    "nome": "Golden Hour",
+                    "artista": "JVKE",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                },
+                {
+                    "nome": "Sunset Lover",
+                    "artista": "Petit Biscuit",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "Vienna",
+                    "artista": "Billy Joel",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                }
+            ],
+            "musica_aplicada": "No Lie - Sean Paul feat Dua Lipa"
         },
         {
-          "nome": "Vienna",
-          "artista": "Billy Joel",
-          "descricao": "Clássica e nostálgica",
-          "formatada": "Vienna - Billy Joel"
+            "id": 4,
+            "filtro": "",
+            "filtro_formatado": "Sem filtro",
+            "musicas": [
+                {
+                    "nome": "No Lie",
+                    "artista": "Sean Paul feat Dua Lipa",
+                    "descricao": "Alto astral, para a empolgação do momento",
+                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
+                },
+                {
+                    "nome": "Golden Hour",
+                    "artista": "JVKE",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                },
+                {
+                    "nome": "Sunset Lover",
+                    "artista": "Petit Biscuit",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "Vienna",
+                    "artista": "Billy Joel",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                }
+            ],
+            "musica_aplicada": "No Lie - Sean Paul feat Dua Lipa"
+        },
+        {
+            "id": 5,
+            "filtro": "RETRO",
+            "filtro_formatado": "Retro 🎞️",
+            "musicas": [
+                {
+                    "nome": "No Lie",
+                    "artista": "Sean Paul feat Dua Lipa",
+                    "descricao": "Alto astral, para a empolgação do momento",
+                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
+                },
+                {
+                    "nome": "Golden Hour",
+                    "artista": "JVKE",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                },
+                {
+                    "nome": "Sunset Lover",
+                    "artista": "Petit Biscuit",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "Vienna",
+                    "artista": "Billy Joel",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                }
+            ],
+            "musica_aplicada": "No Lie - Sean Paul feat Dua Lipa"
         }
-    ],
-      "musica_aplicada": "No Lie"
-    },
-    {
-      "id": 2,
-      "filtro": "Neon",
-      "musicas": [
-        {
-          "nome": "No Lie",
-          "artista": "Sean Paul feat Dua Lipa",
-          "descricao": "Alto astral, para a empolgação do momento",
-          "formatada": "No Lie - Sean Paul feat Dua Lipa"
-        },
-        {
-          "nome": "Golden Hour",
-          "artista": "JVKE",
-          "descricao": "Combina com seu histórico indie pop",
-          "formatada": "Golden Hour - JVKE"
-        },
-        {
-          "nome": "Sunset Lover",
-          "artista": "Petit Biscuit",
-          "descricao": "Eletrônica suave, perfeita pra alegria",
-          "formatada": "Sunset Lover - Petit Biscuit"
-        },
-        {
-          "nome": "Vienna",
-          "artista": "Billy Joel",
-          "descricao": "Clássica e nostálgica",
-          "formatada": "Vienna - Billy Joel"
-        }
-    ],
-      "musica_aplicada": "Golden Hour"
-    }
-  ]
+    ]
 }
-
-

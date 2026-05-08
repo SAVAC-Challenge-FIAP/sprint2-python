@@ -1,10 +1,10 @@
 {
   "filtros": [
-    {"nome": "Vivid","formatado":"Vivid 🌟"},
-    {"nome": "Neon","formatado":"Neon 🌈"},
-    {"nome": "Love","formatado":"Love ❤️"},
-    {"nome": "Eclipse","formatado":"Eclipse 🌗"},
-    {"nome": "Retro","formatado":"Retro 🎞️"},
-    {"nome": "Vintage","formatado":"Vintage 🕰️"}
+    {"nome": "VIVID","formatado":"Vivid 🌟"},
+    {"nome": "NEON","formatado":"Neon 🌈"},
+    {"nome": "LOVE","formatado":"Love ❤️"},
+    {"nome": "ECLIPSE","formatado":"Eclipse 🌗"},
+    {"nome": "RETRO","formatado":"Retro 🎞️"},
+    {"nome": "VINTAGE","formatado":"Vintage 🕰️"}
   ]
 }
