@@ -2,87 +2,234 @@
     "fotos": [
         {
             "id": 1,
-            "filtro": "VIVID",
-            "filtro_formatado": "Vivid 🌟",
-            "musicas": [
-                {"nome": "BLINDING LIGHTS", "descricao": "Vibe oitocentista e energética", "formatada": "Blinding Lights - The Weeknd"},
-                {"nome": "LEVITATING", "descricao": "Pop dançante e chiclete", "formatada": "Levitating - Dua Lipa"},
-                {"nome": "STAY", "descricao": "Ritmo acelerado e moderno", "formatada": "Stay - The Kid LAROI & Justin Bieber"},
-                {"nome": "NO LIE", "descricao": "Alto astral, para a empolgação do momento", "formatada": "No Lie - Sean Paul feat Dua Lipa"}
-            ],
-            "musica_aplicada": "Blinding Lights - The Weeknd"
-        },
-        {
-            "id": 2,
+            "visu": "🌄",
             "filtro": "NEON",
             "filtro_formatado": "Neon 🌈",
             "musicas": [
-                {"nome": "MIDNIGHT CITY", "descricao": "Eletrônica épica e urbana", "formatada": "Midnight City - M83"},
-                {"nome": "STARBOY", "descricao": "Batida marcante e noturna", "formatada": "Starboy - The Weeknd"},
-                {"nome": "SUNSET LOVER", "descricao": "Eletrônica suave, perfeita pra alegria", "formatada": "Sunset Lover - Petit Biscuit"},
-                {"nome": "SAVE YOUR TEARS", "descricao": "Sintetizadores envolventes", "formatada": "Save Your Tears - The Weeknd"}
+                {
+                    "nome": "MIDNIGHT CITY",
+                    "descricao": "Eletrônica épica e urbana",
+                    "formatada": "Midnight City - M83"
+                },
+                {
+                    "nome": "STARBOY",
+                    "descricao": "Batida marcante e noturna",
+                    "formatada": "Starboy - The Weeknd"
+                },
+                {
+                    "nome": "SUNSET LOVER",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "SAVE YOUR TEARS",
+                    "descricao": "Sintetizadores envolventes",
+                    "formatada": "Save Your Tears - The Weeknd"
+                }
             ],
-            "musica_aplicada": "Midnight City - M83"
+            "musica": "MIDNIGHT CITY",
+            "musica_formatada": "Midnight City - M83",
+            "descricao_musica": "Eletrônica épica e urbana",
+            "num1": 10,
+            "num2": 14
         },
         {
-            "id": 3,
+            "id": 2,
+            "visu": "👦",
             "filtro": "ECLIPSE",
             "filtro_formatado": "Eclipse 🌗",
             "musicas": [
-                {"nome": "CIRCLES", "descricao": "Melodia relaxante e nostálgica", "formatada": "Circles - Post Malone"},
-                {"nome": "AS IT WAS", "descricao": "Leve e perfeita para transições", "formatada": "As It Was - Harry Styles"},
-                {"nome": "HEAT WAVES", "descricao": "Indie pop com cara de verão", "formatada": "Heat Waves - Glass Animals"},
-                {"nome": "GOLDEN HOUR", "descricao": "Combina com seu histórico indie pop", "formatada": "Golden Hour - JVKE"}
+                {
+                    "nome": "CIRCLES",
+                    "descricao": "Melodia relaxante e nostálgica",
+                    "formatada": "Circles - Post Malone"
+                },
+                {
+                    "nome": "AS IT WAS",
+                    "descricao": "Leve e perfeita para transições",
+                    "formatada": "As It Was - Harry Styles"
+                },
+                {
+                    "nome": "HEAT WAVES",
+                    "descricao": "Indie pop com cara de verão",
+                    "formatada": "Heat Waves - Glass Animals"
+                },
+                {
+                    "nome": "GOLDEN HOUR",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                }
             ],
-            "musica_aplicada": "Circles - Post Malone"
+            "musica": "CIRCLES",
+            "musica_formatada": "Circles - Post Malone",
+            "descricao_musica": "Melodia relaxante e nostálgica",
+            "num1": 22,
+            "num2": 29
         },
         {
-            "id": 4,
+            "id": 3,
+            "visu": "🌄",
             "filtro": " ",
             "filtro_formatado": "Sem filtro",
             "musicas": [
-                {"nome": "WATERMELON SUGAR", "descricao": "Vibe ensolarada e refrescante", "formatada": "Watermelon Sugar - Harry Styles"},
-                {"nome": "COLD HEART", "descricao": "Remix clássico para momentos alegres", "formatada": "Cold Heart - Elton John & Dua Lipa"},
-                {"nome": "SUNSET LOVER", "descricao": "Eletrônica suave, perfeita pra alegria", "formatada": "Sunset Lover - Petit Biscuit"},
-                {"nome": "VIENNA", "descricao": "Clássica e nostálgica", "formatada": "Vienna - Billy Joel"}
+                {
+                    "nome": "WATERMELON SUGAR",
+                    "descricao": "Vibe ensolarada e refrescante",
+                    "formatada": "Watermelon Sugar - Harry Styles"
+                },
+                {
+                    "nome": "COLD HEART",
+                    "descricao": "Remix clássico para momentos alegres",
+                    "formatada": "Cold Heart - Elton John & Dua Lipa"
+                },
+                {
+                    "nome": "SUNSET LOVER",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "VIENNA",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                }
             ],
-            "musica_aplicada": "Watermelon Sugar - Harry Styles"
+            "musica": "WATERMELON SUGAR",
+            "musica_formatada": "Watermelon Sugar - Harry Styles",
+            "descricao_musica": "Vibe ensolarada e refrescante",
+            "num1": 1,
+            "num2": 30
         },
         {
-            "id": 5,
+            "id": 4,
+            "visu": "👦",
             "filtro": "RETRO",
             "filtro_formatado": "Retro 🎞️",
             "musicas": [
-                {"nome": "VIENNA", "descricao": "Clássica e nostálgica", "formatada": "Vienna - Billy Joel"},
-                {"nome": "CIRCLES", "descricao": "Melodia relaxante e nostálgica", "formatada": "Circles - Post Malone"},
-                {"nome": "GOLDEN HOUR", "descricao": "Combina com seu histórico indie pop", "formatada": "Golden Hour - JVKE"},
-                {"nome": "SAVE YOUR TEARS", "descricao": "Sintetizadores envolventes", "formatada": "Save Your Tears - The Weeknd"}
+                {
+                    "nome": "VIENNA",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                },
+                {
+                    "nome": "CIRCLES",
+                    "descricao": "Melodia relaxante e nostálgica",
+                    "formatada": "Circles - Post Malone"
+                },
+                {
+                    "nome": "GOLDEN HOUR",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                },
+                {
+                    "nome": "SAVE YOUR TEARS",
+                    "descricao": "Sintetizadores envolventes",
+                    "formatada": "Save Your Tears - The Weeknd"
+                }
             ],
-            "musica_aplicada": "Vienna - Billy Joel"
+            "musica": "VIENNA",
+            "musica_formatada": "Vienna - Billy Joel",
+            "descricao_musica": "Clássica e nostálgica",
+            "num1": 7,
+            "num2": 30
         },
         {
-            "id": 6,
+            "id": 5,
+            "visu": "👦",
             "filtro": "VINTAGE",
             "filtro_formatado": "Vintage 🕰️",
             "musicas": [
-                {"nome": "COLD HEART", "descricao": "Remix clássico para momentos alegres", "formatada": "Cold Heart - Elton John & Dua Lipa"},
-                {"nome": "AS IT WAS", "descricao": "Leve e perfeita para transições", "formatada": "As It Was - Harry Styles"},
-                {"nome": "VIENNA", "descricao": "Clássica e nostálgica", "formatada": "Vienna - Billy Joel"},
-                {"nome": "MIDNIGHT CITY", "descricao": "Eletrônica épica e urbana", "formatada": "Midnight City - M83"}
+                {
+                    "nome": "COLD HEART",
+                    "descricao": "Remix clássico para momentos alegres",
+                    "formatada": "Cold Heart - Elton John & Dua Lipa"
+                },
+                {
+                    "nome": "AS IT WAS",
+                    "descricao": "Leve e perfeita para transições",
+                    "formatada": "As It Was - Harry Styles"
+                },
+                {
+                    "nome": "VIENNA",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                },
+                {
+                    "nome": "MIDNIGHT CITY",
+                    "descricao": "Eletrônica épica e urbana",
+                    "formatada": "Midnight City - M83"
+                }
             ],
-            "musica_aplicada": "Cold Heart - Elton John & Dua Lipa"
+            "musica": "COLD HEART",
+            "musica_formatada": "Cold Heart - Elton John & Dua Lipa",
+            "descricao_musica": "Remix clássico para momentos alegres",
+            "num1": 16,
+            "num2": 29
         },
         {
-            "id": 7,
+            "id": 6,
+            "visu": "🌄",
             "filtro": "VIVID",
             "filtro_formatado": "Vivid 🌟",
             "musicas": [
-                {"nome": "STAY", "descricao": "Ritmo acelerado e moderno", "formatada": "Stay - The Kid LAROI & Justin Bieber"},
-                {"nome": "LEVITATING", "descricao": "Pop dançante e chiclete", "formatada": "Levitating - Dua Lipa"},
-                {"nome": "NO LIE", "descricao": "Alto astral, para a empolgação do momento", "formatada": "No Lie - Sean Paul feat Dua Lipa"},
-                {"nome": "BLINDING LIGHTS", "descricao": "Vibe oitocentista e energética", "formatada": "Blinding Lights - The Weeknd"}
+                {
+                    "nome": "STAY",
+                    "descricao": "Ritmo acelerado e moderno",
+                    "formatada": "Stay - The Kid LAROI & Justin Bieber"
+                },
+                {
+                    "nome": "LEVITATING",
+                    "descricao": "Pop dançante e chiclete",
+                    "formatada": "Levitating - Dua Lipa"
+                },
+                {
+                    "nome": "NO LIE",
+                    "descricao": "Alto astral, para a empolgação do momento",
+                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
+                },
+                {
+                    "nome": "BLINDING LIGHTS",
+                    "descricao": "Vibe oitocentista e energética",
+                    "formatada": "Blinding Lights - The Weeknd"
+                }
             ],
-            "musica_aplicada": "Stay - The Kid LAROI & Justin Bieber"
+            "musica": "STAY",
+            "musica_formatada": "Stay - The Kid LAROI & Justin Bieber",
+            "descricao_musica": "Ritmo acelerado e moderno",
+            "num1": 8,
+            "num2": 16
+        },
+        {
+            "id": 7,
+            "visu": "👦",
+            "filtro": "SEM FILTRO",
+            "filtro_formatado": "Sem filtro",
+            "musicas": [
+                {
+                    "nome": "SAVE YOUR TEARS",
+                    "descricao": "Sintetizadores envolventes",
+                    "formatada": "Save Your Tears - The Weeknd"
+                },
+                {
+                    "nome": "SUNSET LOVER",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "STAY",
+                    "descricao": "Ritmo acelerado e moderno",
+                    "formatada": "Stay - The Kid LAROI & Justin Bieber"
+                },
+                {
+                    "nome": "GOLDEN HOUR",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                }
+            ],
+            "musica": "SUNSET LOVER",
+            "musica_formatada": "Sunset Lover - Petit Biscuit",
+            "descricao_musica": "Eletrônica suave, perfeita pra alegria",
+            "num1": 6,
+            "num2": 8
         }
     ]
 }
