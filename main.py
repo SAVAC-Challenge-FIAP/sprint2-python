@@ -25,44 +25,44 @@ def permissoes_aplicativo(): # Função para o usuário permitir o acesso a outr
                 return
 
             case '2':
-                print('\n\nPara entrar no nosso modo, você precisa permitir tudo!! ')
+                print('\n\nPara usar nosso sistema, você precisa permitir tudo!! ')
                 print('Tente novamente!\n')
 
             case _:
                 print_invalido() 
 
 def permissoes_dados(): # Função para permitir uso de dados
-    while True:
-        print("\n" + "="*40)
-        print("          🛡️ PRIVACIDADE DE DADOS")
-        print("="*40)
-        print("Sua privacidade é nossa prioridade.")
-        print("Para melhorar sua experiência, o Synesthesia")
-        print("precisa coletar dados anônimos de uso:")
-        print("\n* Uso de Filtros: Para sabermos quais você mais gosta")
-        print("* Erros do App: Para corrigirmos bugs rapidamente")
-        print("* Metadados: músicas escolhidas, para melhores recomendações")
-        print("\n⚠️  Nenhuma foto ou informação pessoal sai do seu celular!")
+    print("\n" + "="*40)
+    print("          🛡️ PRIVACIDADE DE DADOS")
+    print("="*40)
+    print("Sua privacidade é nossa prioridade.")
+    print("Para melhorar a sua experiência, o Synesthesia")
+    print("precisa coletar dados anônimos de uso:")
+    print("\n* Uso de Filtros: Para sabermos quais você mais gosta!")
+    print("* Erros do App: Para corrigirmos bugs rapidamente!")
+    print("* Metadados: músicas escolhidas, para melhores recomendações!")
+    print("\n⚠️  Nenhuma foto ou informação pessoal sai do seu celular!")
+    
+    print('\nDigite:')
+    print('1 - Aceito compartilhar dados de melhoria')
+    print("2 - Prefiro não compartilhar meus dados")
+    
+    try: # Usado para verificação de entrada
+        escolha = int(input("\nSua escolha: "))
         
-        print('\nDigite:')
-        print('1 - Aceito compartilhar dados de melhoria')
-        print("2 - Prefiro não compartilhar meus dados")
+        if escolha == 1:
+            print("\n✅ Obrigado! Você está ajudando o Synesthesia a evoluir.")
+            return 'Aceita'
         
-        try: # Usado para verificação de entrada
-            escolha = int(input("\nSua escolha: "))
-            
-            if escolha == 1:
-                print("\n✅ Obrigado! Você está ajudando o Synesthesia a evoluir.")
-                return True
-            
-            elif escolha == 2:
-                print("\nDesculpa, mas precisamos da sua permissão para melhorar a sua experiência! ")
-            
-            else:
-                print("\nOpção inválida! Escolha 1 ou 2.")
+        elif escolha == 2:
+            print("\Sua experiência será afetada! Caso mude de ideia, poderá aceitar no futuro! ")
+            return 'Recusada'
         
-        except ValueError:
-            print("\nPor favor, digite apenas o número 1 ou 2.")
+        else:
+            print("\nOpção inválida! Escolha 1 ou 2.")
+    
+    except ValueError:
+        print("\nPor favor, digite apenas o número 1 ou 2.")
 
 def print_camera(visu,filtros_formatados): #Função para mostrar o visor da câmera em tempo real
     print(f'''
@@ -392,7 +392,7 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
             case _:
                 print_invalido()
 
-def main(): # Função principal para mostrar o visor da câmera
+def main(uso_dados): # Função principal para mostrar o visor da câmera
 
     # As variáveis abaixo servem para setar as configurações padrões da câmera, sendo possível alterá-las pelo usuário
     filtro_automatico = True 
@@ -562,7 +562,10 @@ def main(): # Função principal para mostrar o visor da câmera
                     print('Fonte do áudio - Deezer') # Por enquanto só conseguimos usar o deezer como nossa API
                     print('API que entrega o preview')
                     print()
-                    print('5 - Voltar para a câmera ')
+                    print(f'5 - Permissão de uso de dados ({uso_dados})') # Por enquanto não temos a coleta de dados para melhores recomendações, mas o usuário poderá rever e mudar sua decisão
+                    print('Pode rever e alterar sua decisão')
+                    print()
+                    print('6 - Voltar para a câmera ')
 
                     menu_ajustes = input('\n\nDigite a opção desejada: ')
 
@@ -588,6 +591,9 @@ def main(): # Função principal para mostrar o visor da câmera
                             sugestao_automatica = not sugestao_automatica
 
                         case '5':
+                            uso_dados = permissoes_dados()
+
+                        case '6':
                             break
 
                         case _:
@@ -620,7 +626,7 @@ def main(): # Função principal para mostrar o visor da câmera
 if __name__ == "__main__":  # Começo do código
     print('\nBem vindo ao modo Synesthesia !!!\n')
 
-    permissoes = permissoes_aplicativo()
+    permissoes_aplicativo()
     dados_permitidos = permissoes_dados()
 
-    main()
+    main(dados_permitidos)
