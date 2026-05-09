@@ -1,7 +1,7 @@
 import json
 import random as rd # Usado para determinar músicas e filtros aleatórios, enquanto nao temos integração
 
-# Do conteúdo que está no código e não foi dado, foi utilizado: funções, enumerate, json, dicionário, upper(), try/except e manipulações de strings com cor, slicing e alinhamento
+# Do conteúdo que está no código e não foi dado, foi utilizado: funções, json, dicionário, upper(), try/except, além de manipulações de strings com cor, slicing e alinhamento para prints
 
 def print_invalido(): # Função para printar que a entrada é inválida
     print('\nEntrada inválida!! ')
@@ -409,7 +409,7 @@ def main(): # Função principal para mostrar o visor da câmera
 
     filtros = dados_filtros['filtros'] # Aqui ficará armazenado a lista de dados dos filtros para ser usado em verificações
 
-    filtro_determinado = rd.randint(0,5) # Esse número vai determinar o filtro julgado pelo nosso sistema como o filtro da 'Vibe' da imagem no leitor da câmera em tempo real. Entretanto, como não temos integração ainda, ele terá um filtro aleatório setado como inicial
+    filtro_determinado = rd.randint(0,6) # Esse número vai determinar o filtro julgado pelo nosso sistema como o filtro da 'Vibe' da imagem no leitor da câmera em tempo real. Entretanto, como não temos integração ainda, ele terá um filtro aleatório setado como inicial
 
     filtro_atual = filtros[filtro_determinado]['nome'] # Aqui vai ser armazenado o nome do filtro selecionado para ser usado em verificações
 
@@ -496,7 +496,7 @@ def main(): # Função principal para mostrar o visor da câmera
                 # Ao voltar para câmera o sistema recalculará o filtro adequado de acordo com o que aparecer no visor
                 # Novamente será determinado um filtro aleatório
 
-                filtro_atual = filtros[rd.randint(0,5)]['nome'] 
+                filtro_atual = filtros[rd.randint(0,6)]['nome'] 
         
             case '2':
                 while True:
@@ -576,7 +576,7 @@ def main(): # Função principal para mostrar o visor da câmera
 
                             else:
                                 # Caso seja ligado novamente, será determinado novamente um filtro aleatório adequado para o visor
-                                filtro_atual = filtros[rd.randint(0,5)]['nome'] 
+                                filtro_atual = filtros[rd.randint(0,6)]['nome'] 
 
                         case '2':
                             deteccao_em_tempo_real = not deteccao_em_tempo_real
@@ -599,7 +599,7 @@ def main(): # Função principal para mostrar o visor da câmera
             case '5':
                 traseira = not traseira
                 # Determina novamente um filtro aleatório de acordo com a imagem no visor da câmera 
-                filtro_atual = filtros[rd.randint(0,5)]['nome'] 
+                filtro_atual = filtros[rd.randint(0,6)]['nome'] 
 
                 print('\n\nAo virar a câmera, o sistema recalcula em tempo real o filtro adequado! ') 
 
