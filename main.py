@@ -55,7 +55,7 @@ def permissoes_dados(): # Função para permitir uso de dados
             return 'Aceita'
         
         elif escolha == 2:
-            print("\Sua experiência será afetada! Caso mude de ideia, poderá aceitar no futuro! ")
+            print("\nSua experiência será afetada! Caso mude de ideia, poderá aceitar no futuro! ")
             return 'Recusada'
         
         else:
@@ -191,10 +191,10 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
         print_foto(visu,filtro_formatado,musica_formatada,descricao_musica,num1,num2) # Imagem do visor de edição da foto
 
         print('\nDigite a opção desejada:')                  
-        print('1 - Trocar música:') # Troca a música aplicada na foto por outra uma das outras 3 que nosso sistema determinou para a foto               
-        print('2 - Ajustar tempo da música:') # Ajusta o tempo da música aplicada para o trecho que mais agrada o usuário
-        print('3 - Play na música:') # Por enquanto só printa que a música está tocando sem interatividade
-        print('4 - Alterar filtro:') # Altera o filtro da foto 
+        print('1 - Trocar música') # Troca a música aplicada na foto por outra uma das outras 3 que nosso sistema determinou para a foto               
+        print('2 - Ajustar tempo da música') # Ajusta o tempo da música aplicada para o trecho que mais agrada o usuário
+        print('3 - Play na música') # Por enquanto só printa que a música está tocando sem interatividade
+        print('4 - Alterar filtro') # Altera o filtro da foto 
         print('5 - Salvar mudanças e compartilhar foto') # Salva as mudanças feitas pelo usuário e compartilha a foto com algum aplicativo 
         print('6 - Apagar foto e retornar para a galeria') # Apaga a foto e retorna para a galeria   
         print('7 - Salvar mudanças e voltar para a câmera') # Salva as mudanças feitas e volta para câmera
@@ -433,10 +433,10 @@ def main(uso_dados): # Função principal para mostrar o visor da câmera
         print_camera(visu, filtros_formatados)
 
         print('\nDigite a opção desejada:')     
-        print('1 - Tirar Foto:') # Tira a foto com as informações que o usuário estiver vendo no momento
-        print('2 - Entrar na galeria:') # Acessa a galeria do nosso sistema, podendo editar fotos já tiradas 
-        print('3 - Ajustes:') # Configurações padrões da câmera 
-        print('4 - Alterar filtro em tempo real:') # Altera o filtro em tempo real 
+        print('1 - Tirar Foto') # Tira a foto com as informações que o usuário estiver vendo no momento
+        print('2 - Entrar na galeria') # Acessa a galeria do nosso sistema, podendo editar fotos já tiradas 
+        print('3 - Ajustes') # Configurações padrões da câmera 
+        print('4 - Alterar filtro em tempo real') # Altera o filtro em tempo real 
         print('5 - Virar câmera') # Vira a câmera do celular 
         print('6 - Sair do aplicativo\n') # Fecha o aplicativo
 
