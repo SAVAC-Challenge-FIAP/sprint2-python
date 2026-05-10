@@ -263,6 +263,39 @@
             "descricao_musica": "Ritmo acelerado e moderno",
             "num1": 0,
             "num2": 30
+        },
+        {
+            "id": 9,
+            "visu": "🌄",
+            "filtro": "VIVID",
+            "filtro_formatado": "Vivid 🌟",
+            "musicas": [
+                {
+                    "nome": "SUNSET LOVER",
+                    "descricao": "Eletrônica suave, perfeita pra alegria",
+                    "formatada": "Sunset Lover - Petit Biscuit"
+                },
+                {
+                    "nome": "BLINDING LIGHTS",
+                    "descricao": "Vibe oitocentista e energética",
+                    "formatada": "Blinding Lights - The Weeknd"
+                },
+                {
+                    "nome": "WATERMELON SUGAR",
+                    "descricao": "Vibe ensolarada e refrescante",
+                    "formatada": "Watermelon Sugar - Harry Styles"
+                },
+                {
+                    "nome": "STAY",
+                    "descricao": "Ritmo acelerado e moderno",
+                    "formatada": "Stay - The Kid LAROI & Justin Bieber"
+                }
+            ],
+            "musica": "WATERMELON SUGAR",
+            "musica_formatada": "Watermelon Sugar - Harry Styles",
+            "descricao_musica": "Vibe ensolarada e refrescante",
+            "num1": 2,
+            "num2": 30
         }
     ]
 }

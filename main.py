@@ -137,7 +137,7 @@ def print_foto(visu,filtro,musica,descricao_musica,num1,num2): # Função para m
 
 def escolha_filtros(nomes_filtros,filtro_atual): # Função para o usuário dizer qual filtro deseja escolher
     while True:
-        print('\nEscreva o nome do filtro desejado sem o emoji: ')
+        print('\nEscreva o nome do filtro desejado (sem o emoji). ')
         print('Caso queira voltar ao menu principal digite SAIR: ')
         filtro_desejado = input('').upper() # Usado upper() para verificação de entrada
 
@@ -215,7 +215,7 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                             print(texto)
                             print(m['descricao'])
 
-                    print('\nEscreva somente o nome da música desejada: ')
+                    print('\nEscreva somente o nome da música desejada. ')
                     musica_desejada = input('Caso queira voltar ao menu principal digite SAIR: ').upper()
 
                     if musica_desejada in nomes_musicas:
@@ -296,20 +296,20 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                 # Opções de compartilhamento do nosso aplicativo
                 opcoes_compartilhamento = ['Instagram','TikTok','Whatsapp','Twitter','Linkedin']
 
-                print('\n\nDigite a opção desejada de compartilhamento! \n')
+                print('\n\nEscolha uma rede para compartilhar: \n')
                 print('1 - Instagram')
                 print('2 - TikTok')
-                print('3 - Whatsapp')
-                print('4 - Twitter')
+                print('3 - WhatsApp')
+                print('4 - Twitter (X)')
                 print('5 - Linkedin')
-                print('6 - Voltar ao menu de edição')
+                print('\n\n6 - Voltar ao menu de edição')
 
                 while True:
                     try: # Usado para verificação de entrada
                         rede_social = int(input(''))
 
                         if 1 > rede_social or rede_social > 6:
-                            print('\nNão existe essa opção! ')
+                            print('\nNão existe essa opção. ')
                             print('Tente novamente!\n')
 
                         elif rede_social == '6':
@@ -336,7 +336,7 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                             with open('galeria.json', 'w', encoding='utf-8') as g: 
                                 json.dump(conteudo_para_salvar, g, indent=4, ensure_ascii=False) 
 
-                            print(f'\n\nFoto Salva e Compartilhada com sucesso para a rede {opcoes_compartilhamento[rede_social-1]}!!!\n')
+                            print(f'\n\nFoto salva e compartilhada com sucesso para a rede {opcoes_compartilhamento[rede_social-1]}!\n')
                             break
 
                     except ValueError:
