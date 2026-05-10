@@ -237,41 +237,38 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                         print('Tente novamente\n')
 
             case '2':   
-                # A lista abaixo só foi criada para mostrar para o usuário as opções de segundos disponíveis
-                tempo_musica = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
-
-                print(f'\n{tempo_musica}')
-                print('\nAqui você pode editar a duração da música na sua foto dentro do intervalo de 30 segundos!')
-                print('\nCaso deseja voltar ao menu de edição sem mudar o tempo da música, digite (0) duas vezes! \n')
+                
+                print('\nEscolha o intervalo da música que você quer tocar (máximo de 30 segundos).')
+                print('\nPara cancelar e voltar ao menu de edição, digite 00 \n')
                 
                 while True:
                     try: # Usado para verificação de entrada
-                        numero1 = int(input('Digite o segundo desejado que começa a música: ')) 
-                        numero2 = int(input('Digite o segundo desejado que termina a música: '))                      
+                        numero1 = int(input('Digite o segundo inicial da música: ')) 
+                        numero2 = int(input('Digite o segundo final da música: '))                      
             
                         if (0 <= numero1 <= 30) and (0 <= numero2 <= 30):
                             if numero1 == 0 and numero2 == 0:
                                 break
 
                             elif numero1 > numero2:
-                                print('\nO segundo que a música termina precisa ser depois do segundo que começa! ')
+                                print('\nEscolha um tempo de término maior que o de início. ')
                                 print('Tente novamente! \n')
 
                             elif (numero1 == numero2) or ((numero2 - numero1) == 1):
-                                print('\nA música precisa ter no mínimo 2 segundos! ')
+                                print('\nA música precisa ter no mínimo 2 segundos. ')
                                 print('Tente novamente! \n')
 
                             else:
                                 num1 = numero1
                                 num2 = numero2
-                                print(f'\nVocê selecionou a música entre o trecho {num1} e {num2}\n')
+                                print(f'\nVocê selecionou a música entre o intervalo {num1} e {num2}\n')
                                 break
 
                         else:
-                            print("\nPor favor, digite dois números inteiros entre 0 e 31! ")
+                            print("\nPor favor, digite dois números entre 0 e 30! ")
 
                     except ValueError:
-                        print("\nEntrada inválida! Você deve digitar dois números inteiros entre 0 e 31!\n")                    
+                        print("\nEntrada inválida! Digite dois números entre 0 e 30.\n")                    
                         
             case '3':
                 print(f"\n\nTocando {num2-num1} segundos da seguinte música: {musica_formatada}\n")

@@ -230,6 +230,39 @@
             "descricao_musica": "Eletrônica suave, perfeita pra alegria",
             "num1": 6,
             "num2": 8
+        },
+        {
+            "id": 8,
+            "visu": "🌄",
+            "filtro": "ECLIPSE",
+            "filtro_formatado": "Eclipse 🌗",
+            "musicas": [
+                {
+                    "nome": "STAY",
+                    "descricao": "Ritmo acelerado e moderno",
+                    "formatada": "Stay - The Kid LAROI & Justin Bieber"
+                },
+                {
+                    "nome": "VIENNA",
+                    "descricao": "Clássica e nostálgica",
+                    "formatada": "Vienna - Billy Joel"
+                },
+                {
+                    "nome": "CIRCLES",
+                    "descricao": "Melodia relaxante e nostálgica",
+                    "formatada": "Circles - Post Malone"
+                },
+                {
+                    "nome": "NO LIE",
+                    "descricao": "Alto astral, para a empolgação do momento",
+                    "formatada": "No Lie - Sean Paul feat Dua Lipa"
+                }
+            ],
+            "musica": "STAY",
+            "musica_formatada": "Stay - The Kid LAROI & Justin Bieber",
+            "descricao_musica": "Ritmo acelerado e moderno",
+            "num1": 0,
+            "num2": 30
         }
     ]
 }
