@@ -52,11 +52,11 @@ def permissoes_dados(): # Função para permitir uso de dados
         
         if escolha == 1:
             print("\n✅ Obrigado! Você está ajudando o Synesthesia a evoluir.")
-            return 'Aceita'
+            return 'ACEITO'
         
         elif escolha == 2:
             print("\nSua experiência será afetada! Caso mude de ideia, poderá aceitar no futuro! ")
-            return 'Recusada'
+            return 'RECUSADO'
         
         else:
             print("\nOpção inválida! Escolha 1 ou 2.")
@@ -193,7 +193,7 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
         print('\nDigite a opção desejada:')                  
         print('1 - Trocar música') # Troca a música aplicada na foto por outra uma das outras 3 que nosso sistema determinou para a foto               
         print('2 - Ajustar tempo da música') # Ajusta o tempo da música aplicada para o trecho que mais agrada o usuário
-        print('3 - Play na música') # Por enquanto só printa que a música está tocando sem interatividade
+        print('3 - Tocar a música') # Por enquanto só printa que a música está tocando sem interatividade
         print('4 - Alterar filtro') # Altera o filtro da foto 
         print('5 - Salvar mudanças e compartilhar foto') # Salva as mudanças feitas pelo usuário e compartilha a foto com algum aplicativo 
         print('6 - Apagar foto e retornar para a galeria') # Apaga a foto e retorna para a galeria   
@@ -392,10 +392,9 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
 def main(uso_dados): # Função principal para mostrar o visor da câmera
 
     # As variáveis abaixo servem para setar as configurações padrões da câmera, sendo possível alterá-las pelo usuário
-    filtro_automatico = True 
-    deteccao_em_tempo_real = True
-    grade_de_composição = False
-    sugestao_automatica = True
+    filtro_automatico = 'ATIVADO'
+    grade_de_composicao = 'DESATIVADO'
+    sugestao_automatica = 'ATIVADO'
 
     traseira = True # Variável para saber se o usuário está vendo a câmera traseira ou frontal
     visu = '🌄' # Imagem do visor da câmera
@@ -539,58 +538,59 @@ def main(uso_dados): # Função principal para mostrar o visor da câmera
             case '3':
                 # Menu de edição dos ajustes da câmera
                 while True:
-                    print('\n\nAjustes:')
-                    print('Digite o ajuste que deseja alterar:')
+                    print('\n\nAjustes — Digite o número para alterar:')
                     print()
-                    print('Câmera:')
-                    print(f'1 - Filtro automático - {filtro_automatico}')
-                    print('Aplica filtro pela vibe detectada')
-                    print()
-                    print(f'2 - Detecção em tempo real - {deteccao_em_tempo_real}')
-                    print('ML Kit analisa cena a cada frame')
-                    print()
-                    print(f'3 - Grade de composição - {grade_de_composição}')
-                    print('Regra dos terços no visor')
+                    print('📸 Câmera e Composição:')
+                    print(f'1. Filtro Automático: [{filtro_automatico}]')
+                    print('Aplica o filtro ideal com base no ambiente.')
+                    print()                    
+                    print(f'2. Grade de composição: [{grade_de_composicao}]')
+                    print('Ativa a regra dos terços no visor.')
                     print('\n')
-                    print('Música:')
-                    print(f'4 - Sugêstão automática - {sugestao_automatica}')
-                    print('Gemini sugere após capturar')
+                    print('🎵 Música e Áudio')
+                    print(f'3. Sugestão Inteligente: [{sugestao_automatica}]')
+                    print('O Gemini escolhe a trilha sonora após a captura.')
+                    print('\n')
+                    print('🔒 Privacidade')
+                    print(f'4. Uso de Dados: ({uso_dados})') # Por enquanto não temos a coleta de dados para melhores recomendações, mas o usuário poderá rever e mudar sua decisão
+                    print('Toque para rever suas permissões.')
                     print()
-                    print('Fonte do áudio - Deezer') # Por enquanto só conseguimos usar o deezer como nossa API
-                    print('API que entrega o preview')
-                    print()
-                    print(f'5 - Permissão de uso de dados ({uso_dados})') # Por enquanto não temos a coleta de dados para melhores recomendações, mas o usuário poderá rever e mudar sua decisão
-                    print('Pode rever e alterar sua decisão')
-                    print()
-                    print('6 - Voltar para a câmera ')
+                    print('5. Voltar para a câmera ')
 
                     menu_ajustes = input('\n\nDigite a opção desejada: ')
 
                     match menu_ajustes:
                         case '1':
-                            filtro_automatico = not filtro_automatico 
+                            if filtro_automatico == "ATIVADO":
+                                filtro_automatico = 'DESATIVADO'
 
-                            if filtro_automatico == False:
                                 # Caso o filtro automático seja desligado, o visor da câmera ficará sem filtro, até o usuário colocar algum
                                 filtro_atual = "SEM FILTRO"
 
                             else:
+                                filtro_automatico = 'ATIVADO'
+
                                 # Caso seja ligado novamente, será determinado novamente um filtro aleatório adequado para o visor
                                 filtro_atual = filtros[rd.randint(0,6)]['nome'] 
 
                         case '2':
-                            deteccao_em_tempo_real = not deteccao_em_tempo_real
+                            if grade_de_composicao == "ATIVADO":
+                                grade_de_composicao = 'DESATIVADO'
+
+                            else:
+                                grade_de_composicao = 'ATIVADO'
 
                         case '3':
-                            grade_de_composição = not grade_de_composição
+                            if sugestao_automatica == "ATIVADO":
+                                filtro_automatico = 'DESATIVADO'
+
+                            else:
+                                sugestao_automatica = 'ATIVADO'
 
                         case '4':
-                            sugestao_automatica = not sugestao_automatica
-
-                        case '5':
                             uso_dados = permissoes_dados()
 
-                        case '6':
+                        case '5':
                             break
 
                         case _:
