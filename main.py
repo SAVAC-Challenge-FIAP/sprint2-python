@@ -239,39 +239,41 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                         print('Tente novamente\n')
 
             case '2':   
+                if musica_escolhida != 'SEM SOM':
+                    print('\nEscolha o intervalo da música que você quer tocar (máximo de 30 segundos).')
+                    print('\nPara cancelar e voltar ao menu de edição, digite 00 \n')
+                    
+                    while True:
+                        try: # Usado para verificação de entrada
+                            numero1 = int(input('Digite o segundo inicial da música: ')) 
+                            numero2 = int(input('Digite o segundo final da música: '))                      
                 
-                print('\nEscolha o intervalo da música que você quer tocar (máximo de 30 segundos).')
-                print('\nPara cancelar e voltar ao menu de edição, digite 00 \n')
-                
-                while True:
-                    try: # Usado para verificação de entrada
-                        numero1 = int(input('Digite o segundo inicial da música: ')) 
-                        numero2 = int(input('Digite o segundo final da música: '))                      
-            
-                        if (0 <= numero1 <= 30) and (0 <= numero2 <= 30):
-                            if numero1 == 0 and numero2 == 0:
-                                break
+                            if (0 <= numero1 <= 30) and (0 <= numero2 <= 30):
+                                if numero1 == 0 and numero2 == 0:
+                                    break
 
-                            elif numero1 > numero2:
-                                print('\nEscolha um tempo de término maior que o de início. ')
-                                print('Tente novamente! \n')
+                                elif numero1 > numero2:
+                                    print('\nEscolha um tempo de término maior que o de início. ')
+                                    print('Tente novamente! \n')
 
-                            elif (numero1 == numero2) or ((numero2 - numero1) == 1):
-                                print('\nA música precisa ter no mínimo 2 segundos. ')
-                                print('Tente novamente! \n')
+                                elif (numero1 == numero2) or ((numero2 - numero1) == 1):
+                                    print('\nA música precisa ter no mínimo 2 segundos. ')
+                                    print('Tente novamente! \n')
+
+                                else:
+                                    num1 = numero1
+                                    num2 = numero2
+                                    print(f'\nVocê selecionou a música entre o intervalo {num1} e {num2}\n')
+                                    break
 
                             else:
-                                num1 = numero1
-                                num2 = numero2
-                                print(f'\nVocê selecionou a música entre o intervalo {num1} e {num2}\n')
-                                break
+                                print("\nPor favor, digite dois números entre 0 e 30! ")
 
-                        else:
-                            print("\nPor favor, digite dois números entre 0 e 30! ")
+                        except ValueError:
+                            print("\nEntrada inválida! Digite dois números entre 0 e 30.\n")   
+                else:
+                    print('Você precisa aplicar uma música para utilizar essa função.')
 
-                    except ValueError:
-                        print("\nEntrada inválida! Digite dois números entre 0 e 30.\n")                    
-                        
             case '3':
                 print(f"\n\nTocando {num2-num1} segundos da seguinte música: {musica_formatada}\n")
 
@@ -453,21 +455,24 @@ def main(uso_dados): # Função principal para mostrar o visor da câmera
                 sem_som = {"nome": "SEM SOM", "descricao": "A foto fala por si só", "formatada": "Sem Som"} # Cria a possibilidade da foto ficar sem som
                 musicas_sorteadas.append(sem_som)
                 
+                # Com nossa API grátis, por enquanto só conseguimos 30 segundos de cada música
+                # Como ainda não temos integração com essa API, o tempo da música é figurativo e só serve para mostrar ao usuário o tempo da música e dar a opção de editá-lo 
+
+                num1 = 0 # Variável para mostrar o segundo que a música começa
+
                 if sugestao_automatica == 'ATIVADO': # Se essa configuração estiver ligada
                     musica_escolhida = musicas_sorteadas[0]['nome'] # Nome da música escolhida pela IA para verificações de entrada
                     descricao_musica = musicas_sorteadas[0]['descricao'] # Descrição da música escolhida pela IA
                     musica = musicas_sorteadas[0]['formatada'] # Música escolhida formatada com o artista
+
+                    num2 = 30 # Variável para mostrar o segundo que a música termina
 
                 else: # Se a configuração estiver desligada, não terá música aplicada na foto, até o usuário aplicar alguma
                     musica_escolhida = musicas_sorteadas[4]['nome'] # Nome da música escolhida pela IA para verificações de entrada
                     descricao_musica = musicas_sorteadas[4]['descricao'] # Descrição da música escolhida pela IA
                     musica = musicas_sorteadas[4]['formatada'] 
 
-                # Com nossa API grátis, por enquanto só conseguimos 30 segundos de cada música
-                # Como ainda não temos integração com essa API, o tempo da música é figurativo e só serve para mostrar ao usuário o tempo da música e dar a opção de editá-lo 
-
-                num1 = 0 # Variável para mostrar o segundo que a música começa
-                num2 = 30 # Variável para mostrar o segundo que a música termina
+                    num2 = 0
 
                 # Todas as músicas, por enquanto tem por padrão 30 segundos, mas ao usuário salvar a foto, ela pode ter menos tempo de duração 
 
