@@ -3,8 +3,6 @@ import random as rd # Usado para determinar músicas e filtros aleatórios, enqu
 
 # Do conteúdo que está no código e não foi dado, foi utilizado: funções, json, dicionário, upper(), try/except, além de manipulações de strings com cor, slicing e alinhamento para prints
 
-
-
 def print_invalido(): # Função para printar que a entrada é inválida
     print('\nEntrada inválida!! ')
     print('Tente novamente!! \n\n')
@@ -320,14 +318,14 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                             print('\nNão existe essa opção. ')
                             print('Tente novamente!\n')
 
-                        elif rede_social == '6':
+                        elif rede_social == 6:
                             break
                         
                         else:       
                             # Caso o usuário compartilhe com alguma rede social, antes disso o sistema salvará a foto e depois, enviará para o aplicativo desejado
                             foto_editada = {
                                 "id": id+1,
-                                "visu": visu,
+                                "visu": visu, 
                                 "filtro": filtro_atual,
                                 "filtro_formatado": filtro_formatado,
                                 "musicas": musicas_sorteadas,
