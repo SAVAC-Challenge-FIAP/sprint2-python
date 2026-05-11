@@ -11,14 +11,14 @@ def print_invalido(): # Função para printar que a entrada é inválida
 
 def permissoes_aplicativo(): # Função para o usuário permitir o acesso a outros aplicativos
     while True:
-        print("Pra começar, precisamos de algumas permissões\n")
-        print("O Synesthesia precisa acessar a câmera e a galeria pra funcionar — tudo processado no seu celular.")
-        print("Câmera - Capturar momentos com filtros mágicos")
-        print("Galeria - Escolher fotos antigas pra remixar")
+        print("Pra começar, precisamos de algumas permissões:\n")
+        print("O Synesthesia precisa acessar sua câmera e galeria.")
+        print("Usamos isso para aplicar filtros inteligentes com base no seu ambiente.")
+        print("\n🔒 Fique tranquilo: todo o processamento é feito direto no seu celular!")
         
-        print('\n\nDigite:')
+        print('\nDigite:')
         print('1 - Permitir tudo')
-        print("2 - Não permitir tudo\n")
+        print("2 - Não permitir\n")
 
         permissao = input()
 
@@ -34,37 +34,38 @@ def permissoes_aplicativo(): # Função para o usuário permitir o acesso a outr
                 print_invalido() 
 
 def permissoes_dados(): # Função para permitir uso de dados
-    print("\n" + "="*40)
-    print("          🛡️ PRIVACIDADE DE DADOS")
-    print("="*40)
-    print("Sua privacidade é nossa prioridade.")
-    print("Para melhorar a sua experiência, o Synesthesia")
-    print("precisa coletar dados anônimos de uso:")
-    print("\n* Uso de Filtros: Para sabermos quais você mais gosta!")
-    print("* Erros do App: Para corrigirmos bugs rapidamente!")
-    print("* Metadados: músicas escolhidas, para melhores recomendações!")
-    print("\n⚠️  Nenhuma foto ou informação pessoal sai do seu celular!")
-    
-    print('\nDigite:')
-    print('1 - Aceito compartilhar dados de melhoria')
-    print("2 - Prefiro não compartilhar meus dados")
-    
-    try: # Usado para verificação de entrada
-        escolha = int(input("\nSua escolha: "))
+    while True:
+        print("\n" + "="*40)
+        print("          🛡️ PRIVACIDADE DE DADOS")
+        print("="*40)
+        print("Sua privacidade é nossa prioridade.")
+        print("Para melhorar a sua experiência, o Synesthesia")
+        print("precisa coletar dados anônimos de uso:")
+        print("\n* Uso de Filtros: Para sabermos quais você mais gosta!")
+        print("* Erros do App: Para corrigirmos bugs rapidamente!")
+        print("* Metadados: músicas escolhidas, para melhores recomendações!")
+        print("\n⚠️  Nenhuma foto ou informação pessoal sai do seu celular!")
         
-        if escolha == 1:
-            print("\n✅ Obrigado! Você está ajudando o Synesthesia a evoluir.")
-            return 'ACEITO'
+        print('\nDigite:')
+        print('1 - Aceito compartilhar dados de melhoria')
+        print("2 - Prefiro não compartilhar meus dados")
         
-        elif escolha == 2:
-            print("\nSua experiência será afetada! Caso mude de ideia, poderá aceitar no futuro! ")
-            return 'RECUSADO'
+        try: # Usado para verificação de entrada
+            escolha = int(input("\nSua escolha: "))
+            
+            if escolha == 1:
+                print("\n✅ Obrigado! Você está ajudando o Synesthesia a evoluir.")
+                return 'ACEITO'
+            
+            elif escolha == 2:
+                print("\nSua experiência será afetada! Caso mude de ideia, poderá aceitar no futuro! ")
+                return 'RECUSADO'
+            
+            else:
+                print("\nOpção inválida! Escolha 1 ou 2.")
         
-        else:
-            print("\nOpção inválida! Escolha 1 ou 2.")
-    
-    except ValueError:
-        print("\nPor favor, digite apenas o número 1 ou 2.")
+        except ValueError:
+            print("\nPor favor, digite apenas o número 1 ou 2.")
 
 def print_camera(visu,filtros_formatados): #Função para mostrar o visor da câmera em tempo real
     print(f'''
