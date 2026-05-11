@@ -310,13 +310,13 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                 print('3 - WhatsApp')
                 print('4 - Twitter (X)')
                 print('5 - Linkedin')
-                print('\n\n6 - Voltar ao menu de edição')
+                print('6 - Voltar ao menu de edição')
 
                 while True:
                     try: # Usado para verificação de entrada
                         rede_social = int(input(''))
 
-                        if 1 > rede_social or rede_social > 6:
+                        if not (1 <= rede_social <= 6):
                             print('\nNão existe essa opção. ')
                             print('Tente novamente!\n')
 
