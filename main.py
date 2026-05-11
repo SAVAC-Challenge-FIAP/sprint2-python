@@ -272,10 +272,14 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                         except ValueError:
                             print("\nEntrada inválida! Digite dois números entre 0 e 30.\n")   
                 else:
-                    print('Você precisa aplicar uma música para utilizar essa função.')
+                    print('\nVocê precisa aplicar uma música para utilizar essa função.')
 
             case '3':
-                print(f"\n\nTocando {num2-num1} segundos da seguinte música: {musica_formatada}\n")
+                if musica_escolhida != 'SEM SOM':
+                    print(f"\n\nTocando {num2-num1} segundos da seguinte música: {musica_formatada}\n")
+                
+                else:
+                    print('\nVocê precisa aplicar uma música para utilizar essa função.')
 
             case '4':
                 print('\nAs opções de filtros disponíveis são: ')
