@@ -3,6 +3,8 @@ import random as rd # Usado para determinar músicas e filtros aleatórios, enqu
 
 # Do conteúdo que está no código e não foi dado, foi utilizado: funções, json, dicionário, upper(), try/except, além de manipulações de strings com cor, slicing e alinhamento para prints
 
+
+
 def print_invalido(): # Função para printar que a entrada é inválida
     print('\nEntrada inválida!! ')
     print('Tente novamente!! \n\n')
@@ -178,7 +180,7 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
     while True:  
         nomes_musicas = [] # Lista usada para armazenar os nomes das 4 músicas determinadas para a foto, que será usada para verificações de entrada
 
-        for i in range(4):
+        for i in range(5):
             nomes_musicas.append(musicas_sorteadas[i]['nome'])
 
         # Laço de repetição para atualizar a música formatada e sua descrição para serem printadas e caso usuário queira, salvar as informações atualizados 
@@ -186,7 +188,6 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
             if m['nome'] == musica_escolhida:
                 musica_formatada = m['formatada']
                 descricao_musica = m['descricao']
-
 
         print_foto(visu,filtro_formatado,musica_formatada,descricao_musica,num1,num2) # Imagem do visor de edição da foto
 
@@ -205,7 +206,7 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
         match menu_foto:
             case '1':
                 while True:
-                    print('As músicas encontradas pela nossa IA foram: ')
+                    print('Encontrei essas músicas para sua foto: ')
 
                     # Laço de repetição para printar as músicas que não estão aplicadas na foto
                     for m in musicas_sorteadas: 
@@ -215,7 +216,7 @@ def menu_de_edicao_da_foto(id,nomes_filtros,filtros): # Função para mostrar o 
                             print(texto)
                             print(m['descricao'])
 
-                    print('\nEscreva somente o nome da música desejada. ')
+                    print('\nDigite o nome da música desejada (ou "Sem som") para continuar: ')
                     musica_desejada = input('Caso queira voltar ao menu principal digite SAIR: ').upper()
 
                     if musica_desejada in nomes_musicas:
@@ -448,9 +449,18 @@ def main(uso_dados): # Função principal para mostrar o visor da câmera
                     
                 musicas_sorteadas = rd.sample(musicas, k=4) # Aqui estão armazenadas as músicas que o nosso sistema sorteou 
 
-                musica_escolhida = musicas_sorteadas[0]['nome'] # Nome da música escolhida pela IA para verificações de entrada
-                descricao_musica = musicas_sorteadas[0]['descricao'] # Descrição da música escolhida pela IA
-                musica = musicas_sorteadas[0]['formatada'] # Música escolhida formatada com o artista
+                sem_som = {"nome": "SEM SOM", "descricao": "A foto fala por si só", "formatada": "Sem Som"} # Cria a possibilidade da foto ficar sem som
+                musicas_sorteadas.append(sem_som)
+                
+                if sugestao_automatica == 'ATIVADO': # Se essa configuração estiver ligada
+                    musica_escolhida = musicas_sorteadas[0]['nome'] # Nome da música escolhida pela IA para verificações de entrada
+                    descricao_musica = musicas_sorteadas[0]['descricao'] # Descrição da música escolhida pela IA
+                    musica = musicas_sorteadas[0]['formatada'] # Música escolhida formatada com o artista
+
+                else: # Se a configuração estiver desligada, não terá música aplicada na foto, até o usuário aplicar alguma
+                    musica_escolhida = musicas_sorteadas[4]['nome'] # Nome da música escolhida pela IA para verificações de entrada
+                    descricao_musica = musicas_sorteadas[4]['descricao'] # Descrição da música escolhida pela IA
+                    musica = musicas_sorteadas[4]['formatada'] 
 
                 # Com nossa API grátis, por enquanto só conseguimos 30 segundos de cada música
                 # Como ainda não temos integração com essa API, o tempo da música é figurativo e só serve para mostrar ao usuário o tempo da música e dar a opção de editá-lo 
@@ -546,11 +556,11 @@ def main(uso_dados): # Função principal para mostrar o visor da câmera
                     print()                    
                     print(f'2. Grade de composição: [{grade_de_composicao}]')
                     print('Ativa a regra dos terços no visor.')
-                    print('\n')
+                    print()
                     print('🎵 Música e Áudio')
                     print(f'3. Sugestão Inteligente: [{sugestao_automatica}]')
                     print('O Gemini escolhe a trilha sonora após a captura.')
-                    print('\n')
+                    print()
                     print('🔒 Privacidade')
                     print(f'4. Uso de Dados: ({uso_dados})') # Por enquanto não temos a coleta de dados para melhores recomendações, mas o usuário poderá rever e mudar sua decisão
                     print('Toque para rever suas permissões.')
@@ -582,7 +592,7 @@ def main(uso_dados): # Função principal para mostrar o visor da câmera
 
                         case '3':
                             if sugestao_automatica == "ATIVADO":
-                                filtro_automatico = 'DESATIVADO'
+                                sugestao_automatica = 'DESATIVADO'
 
                             else:
                                 sugestao_automatica = 'ATIVADO'

@@ -296,6 +296,44 @@
             "descricao_musica": "Vibe ensolarada e refrescante",
             "num1": 2,
             "num2": 30
+        },
+        {
+            "id": 10,
+            "visu": "🌄",
+            "filtro": "LOVE",
+            "filtro_formatado": "Love ❤️",
+            "musicas": [
+                {
+                    "nome": "MIDNIGHT CITY",
+                    "descricao": "Eletrônica épica e urbana",
+                    "formatada": "Midnight City - M83"
+                },
+                {
+                    "nome": "LEVITATING",
+                    "descricao": "Pop dançante e chiclete",
+                    "formatada": "Levitating - Dua Lipa"
+                },
+                {
+                    "nome": "BLINDING LIGHTS",
+                    "descricao": "Vibe oitocentista e energética",
+                    "formatada": "Blinding Lights - The Weeknd"
+                },
+                {
+                    "nome": "GOLDEN HOUR",
+                    "descricao": "Combina com seu histórico indie pop",
+                    "formatada": "Golden Hour - JVKE"
+                },
+                {
+                    "nome": "SEM SOM",
+                    "descricao": "A foto fala por si só",
+                    "formatada": "Sem Som"
+                }
+            ],
+            "musica": "SEM SOM",
+            "musica_formatada": "Sem Som",
+            "descricao_musica": "A foto fala por si só",
+            "num1": 0,
+            "num2": 30
         }
     ]
 }
